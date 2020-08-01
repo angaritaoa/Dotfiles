@@ -1,12 +1,15 @@
 # Ignora todo
 *
 # Excepto por los archivos y carpetas que queremos rastrear
+# system-wide
+!local.conf
+!apt.conf
+!fstab
+
+# home-wide
 !.gitignore
 !README.md
 !LICENSE
 !.Xresources
-!apt.conf
-!fstab
-!local.conf
 !.gitconfig
 !.gtkrc-2.0-kde4
