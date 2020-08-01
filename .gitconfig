@@ -1,0 +1,7 @@
+[user]
+	name = Andres Angarita
+	email = angaritaoa@gmail.com
+[core]
+	editor = vim
+[color]
+	ui = true
