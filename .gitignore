@@ -1,5 +1,7 @@
 # Ignora todo
 *
+!.gitignore
+
 # Excepto por los archivos y carpetas que queremos rastrear
 # system-wide
 !local.conf
@@ -7,7 +9,6 @@
 !fstab
 
 # home-wide
-!.gitignore
 !README.md
 !LICENSE
 !.Xresources
