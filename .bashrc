@@ -18,9 +18,17 @@ export PS1="\[\033[1;38;5;39m\]\\$\>\[\033[0m\] "  # Para configurar el prompt d
 export HISTCONTROL=ignoredups:erasedups            # No duplicar entradas en el histórico de comandos
 export EDITOR="vim"                                # $EDITOR Usar vim en la terminal
 
-# Alias especificos del usuario
-alias ls='ls -ltrh  --color=auto'
-alias la='ls -ltrha --color=auto'
+############################### Alias especificos del usuario ######################
+# Navegación
+alias ..='cd ..' 
+alias ...='cd ../..'
+
+# Cambiando ls por exa
+alias ls='exa -l   --sort=modified --time-style=long-iso --color=always --group-directories-first'
+alias la='exa -la  --sort=modified --time-style=long-iso --color=always --group-directories-first'
+alias lt='exa -laT --sort=modified --time-style=long-iso --color=always --group-directories-first'
+
+# Agregando color a grep
 alias grep='grep -n --color=auto'
 
 # Funciones: Estos son como alias, pero pueden tomar argumentos
