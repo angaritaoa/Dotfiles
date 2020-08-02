@@ -1,6 +1,12 @@
+"       __       _______   __        ______
+"      /""\     /"     "| /""\      /    " \
+"     /    \   (: ______)/    \    // ____  \   Copyright (c) 2020 Andres Angarita
+"    /' /\  \   \/    | /' /\  \  /  /    ) :)  https://github.com/angaritaoa
+"   //  __'  \  // ___)//  __'  \(: (____/ //   Email: angaritaoa@gmail.com
+"  /   /  \\  \(:  (  /   /  \\  \\        /
+" (___/    \___)\__/ (___/    \___)\"_____/
 "
-" ~/.vimrc
-"
+" Mi configuración personalizada de Vim.
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -15,7 +21,6 @@ set autowrite
 set confirm
 set cursorline
 set encoding=utf-8
-set expandtab
 set fileencodings=utf-8
 set fileencoding=utf-8
 set fileformats=unix
@@ -26,7 +31,7 @@ set incsearch
 set nobackup
 set nocompatible
 set noswapfile
-set nowrap
+"set nowrap
 set number
 set omnifunc=syntaxcomplete#Complete
 set ruler
@@ -36,7 +41,6 @@ set showcmd
 set showmatch
 set showtabline=2
 set smartcase
-set softtabstop=4
 set tabstop=4
 set t_Co=256
 set ttimeoutlen=50
@@ -49,11 +53,8 @@ highlight tabLinefill cterm=none
 
 syntax enable
 set background=dark
-"let g:solarized_termcolors=256
-"colorscheme solarized
 
 nmap <ESC><ESC> :nohlsearch<CR>
-
 nmap <S-Tab> :bnext<CR>
 nmap <S-Up> <C-W><Up>
 nmap <S-Down> <C-W><Down>
