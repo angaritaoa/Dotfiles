@@ -31,7 +31,7 @@ set incsearch
 set nobackup
 set nocompatible
 set noswapfile
-"set nowrap
+set nowrap
 set number
 set omnifunc=syntaxcomplete#Complete
 set ruler
