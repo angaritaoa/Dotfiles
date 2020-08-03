@@ -2,11 +2,11 @@
 /*
 !.gitignore
 
-# Excepto por los archivos y carpetas que queremos rastrear
 # system-wide
 !local.conf
 !apt.conf
 !fstab
+!xorg.conf
 
 # home-wide
 !README.md
@@ -18,4 +18,3 @@
 !.config
 !.bash_functions
 !.vimrc
-!xorg.conf
