@@ -16,22 +16,28 @@ fi
 export TERM="xterm-256color"                       # Para obtener colores apropiados en la terminal
 export PS1="\[\033[1;38;5;39m\]\\$\>\[\033[0m\] "  # Para configurar el prompt de Bash
 export HISTCONTROL=ignoredups:erasedups            # No duplicar entradas en el histórico de comandos
-export EDITOR="vim"                                # $EDITOR Usar vim en la terminal
+export EDITOR="vimx"                               # $EDITOR Usar vimx en la terminal
 
 ############################### Alias especificos del usuario ######################
-# Navegación
-alias ..='cd ..' 
+# Navegación en la terminal
+alias ..='cd ..'
 alias ...='cd ../..'
 
-# Cambiando ls por exa
-alias ls='exa -l   --sort=modified --time-style=long-iso --color=always --group-directories-first'
-alias la='exa -la  --sort=modified --time-style=long-iso --color=always --group-directories-first'
-alias lt='exa -laT --sort=modified --time-style=long-iso --color=always --group-directories-first'
+# Cambiando ls por exa. Instalar el paquete: $ sudo dnf install exa
+if [[ -x "$(command -v exa)" ]]; then
+	alias ls='exa -l   --sort=modified --time-style=long-iso --color=always --group-directories-first'
+	alias la='exa -la  --sort=modified --time-style=long-iso --color=always --group-directories-first'
+	alias lt='exa -laT --sort=modified --time-style=long-iso --color=always --group-directories-first'
+fi
 
 # Agregando color a grep
 alias grep='grep -n --color=auto'
 
-# Funciones: Estos son como alias, pero pueden tomar argumentos
+# Para acceder al portapapeles del sistema operativo
+# Instalar el paquete: $ sudo dnf install vimx
+if [[ -x "$(command -v vimx)" ]]; then alias vim='vimx'; fi
+
+# Funciones: Estas son como alias, pero pueden tomar argumentos
 # Todas las funciones están en ~/.bash_functions por modularidad
 if [ -f ~/.bash_functions ]; then
 	. ~/.bash_functions
