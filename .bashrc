@@ -17,6 +17,8 @@ export TERM="xterm-256color"                       # Para obtener colores apropi
 export PS1="\[\033[1;38;5;39m\]\\$\>\[\033[0m\] "  # Para configurar el prompt de Bash
 export HISTCONTROL=ignoredups:erasedups            # No duplicar entradas en el histórico de comandos
 export EDITOR="vimx"                               # $EDITOR Usar vimx en la terminal
+export PATH="$PATH:/opt/flutter/bin"
+export ANDROID_SDK_ROOT=/opt/android-sdk
 
 ############################### Alias especificos del usuario ######################
 # Navegación en la terminal
