@@ -36,7 +36,7 @@ fi
 alias grep='grep -n --color=auto'
 
 # Para acceder al portapapeles del sistema operativo
-# Instalar el paquete: $ sudo dnf install vimx
+# Instalar el paquete: $ sudo dnf install vim-X11
 if [[ -x "$(command -v vimx)" ]]; then alias vim='vimx'; fi
 
 # Funciones: Estas son como alias, pero pueden tomar argumentos
