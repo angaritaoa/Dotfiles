@@ -1,6 +1,0 @@
-# Ignora todo
-/*
-!.gitignore
-
-# Excepto por los archivos y carpetas que queremos rastrear
-!gtk-3.0
