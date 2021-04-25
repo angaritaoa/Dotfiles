@@ -55,7 +55,7 @@ highlight tabLinefill cterm=NONE
 highlight VertSplit cterm=NONE ctermbg=NONE ctermfg=8
 highlight Folded cterm=reverse ctermbg=0 ctermfg=8
 
-"set termguicolors
+set termguicolors
 syntax enable
 "set background=dark
 "colorscheme solarized
