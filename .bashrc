@@ -30,7 +30,7 @@ alias ...='cd ../..'
 if [[ -x "$(command -v exa)" ]]; then
 	alias ls='exa -l   --sort=modified --time-style=long-iso --color=always --group-directories-first'
 	alias la='exa -la  --sort=modified --time-style=long-iso --color=always --group-directories-first'
-	alias lt='exa -laT --sort=modified --time-style=long-iso --color=always --group-directories-first'
+	alias lt='exa -lT  --sort=modified --time-style=long-iso --color=always --group-directories-first'
 fi
 
 # Agregando color a grep
