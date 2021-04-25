@@ -2,6 +2,6 @@
 	name = Andres Angarita
 	email = angaritaoa@gmail.com
 [core]
-	editor = vim
+	editor = nvim
 [color]
 	ui = true
