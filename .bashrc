@@ -13,7 +13,7 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-export TERM="xterm-256color"                       # Para obtener colores apropiados en la terminal
+export TERM="xterm-direct"                         # Para obtener colores apropiados en la terminal
 export PS1="\[\033[1;38;5;39m\]\\$\>\[\033[0m\] "  # Para configurar el prompt de Bash
 export HISTCONTROL=ignoredups:erasedups            # No duplicar entradas en el histórico de comandos
 export EDITOR="nvim"                               # $EDITOR Usar vimx en la terminal
@@ -33,8 +33,10 @@ if [[ -x "$(command -v exa)" ]]; then
 	alias lt='exa -lT  --sort=modified --time-style=long-iso --color=always --group-directories-first'
 fi
 
-# Agregando color a grep
-alias grep='grep -n --color=auto'
+# Agregando color a la salida de los comandos
+alias grep='grep -in --color=auto'
+alias diff='diff --color=auto'
+alias ip='ip -color=auto'
 
 # Para acceder al portapapeles del sistema operativo
 # Instalar el paquete: $ sudo dnf install vim-X11
