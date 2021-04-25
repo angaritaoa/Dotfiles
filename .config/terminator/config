@@ -10,6 +10,7 @@
     icon_bell = False
     background_color = "#212121"
     background_darkness = 0.95
+    background_type = transparent
     cursor_shape = underline
     cursor_color = "#aaaaaa"
     foreground_color = "#f8f8f2"
