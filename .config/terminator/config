@@ -1,0 +1,36 @@
+[global_config]
+  handle_size = 1
+  scroll_tabbar = True
+  homogeneous_tabbar = False
+  title_hide_sizetext = True
+  inactive_color_offset = 1.0
+[keybindings]
+[profiles]
+  [[default]]
+    icon_bell = False
+    background_darkness = 0.95
+    background_type = transparent
+    cursor_shape = underline
+    cursor_color = "#aaaaaa"
+    show_titlebar = False
+    scrollbar_position = hidden
+[layouts]
+  [[default]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 588:275
+      maximised = False
+      fullscreen = False
+      size = 1373, 786
+      title = angaritaoa@fedora:~
+      last_active_term = f5729309-28da-4993-9f85-0aa61506fbc8
+      last_active_window = True
+    [[[terminal1]]]
+      type = Terminal
+      parent = child0
+      order = 0
+      profile = default
+      uuid = f5729309-28da-4993-9f85-0aa61506fbc8
+[plugins]
