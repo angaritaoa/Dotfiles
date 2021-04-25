@@ -14,6 +14,7 @@
 !.Xresources
 !.gitconfig
 !.bashrc
+!.zshrc
 !.bash_functions
 !.vimrc
 !.config/terminator/config
