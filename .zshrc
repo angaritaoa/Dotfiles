@@ -47,6 +47,10 @@ alias grep='grep -in --color=auto'
 alias diff='diff --color=auto'
 alias ip='ip -color=auto'
 
+# Para acceder al portapapeles del sistema operativo
+# Instalar el paquete: $ sudo dnf install vim-X11
+if [[ -x "$(command -v vimx)" ]]; then alias vim='vimx'; fi
+
 autoload -Uz compinit promptinit
 compinit
 promptinit

@@ -8,7 +8,7 @@
 [profiles]
   [[default]]
     icon_bell = False
-    background_color = "#171a1b"
+    background_color = "#282c34"
     background_darkness = 0.95
     cursor_shape = underline
     cursor_color = "#aaaaaa"
