@@ -15,7 +15,7 @@ $ chsh -s full-path-to-shell
 
 ## Powerlevel10k
 
-Instalar las fuentes: [Meslo Nerd Font](`https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k`)
+Instalar las fuentes: [Meslo Nerd Font](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k)
 
 ```shell
 $ mkdir -p ~/.config/powerlevel10k
