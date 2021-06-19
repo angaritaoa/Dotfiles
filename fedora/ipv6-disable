@@ -1,0 +1,4 @@
+$ sudo nano /etc/default/grub
+	GRUB_CMDLINE_LINUX="rd.driver.blacklist=nouveau modprobe.blacklist=nouveau nvidia-drm.modeset=1 ipv6.disable=1 rhgb quiet"
+$ sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
+
