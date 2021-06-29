@@ -1,4 +1,0 @@
-[genesisadaptive-fedora.repo]
-name=genesisadaptive-fedora.repo
-baseurl=https://mirror.genesisadaptive.com/fedora/linux/releases/$releasever/Everything/$basearch/os/
-enabled=1
