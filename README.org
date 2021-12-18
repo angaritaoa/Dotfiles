@@ -3,6 +3,16 @@
 
 [[./desktop.png]]
 
+|            |                                 |
+|------------+---------------------------------|
+| *Shell*    | bash                            |
+| *DM*       | gdm                             |
+| *WM*       | gnome                           |
+| *Editor*   | [[https://github.com/hlissner/doom-emacs][Doom Emacs]] y ocasionalmente vim |
+| *Terminal* | Terminator                      |
+| *Launcher* | Ulauncher                       |
+| *Browser*  | firefox                         |
+| GTK Theme  | Adwaita Black                   |
 
 ## Zsh
 
