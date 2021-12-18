@@ -1,4 +1,8 @@
 #+title: Dotfiles
+#+startup: nofold
+
+[[./desktop.png]]
+
 
 ## Zsh
 
