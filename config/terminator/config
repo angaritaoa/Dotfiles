@@ -1,0 +1,45 @@
+[global_config]
+  focus = system
+  handle_size = 1
+  scroll_tabbar = True
+  homogeneous_tabbar = False
+  title_hide_sizetext = True
+  inactive_color_offset = 1.0
+[keybindings]
+[profiles]
+  [[default]]
+    icon_bell = False
+    background_color = "#282c34"
+    background_darkness = 0.98
+    cursor_shape = underline
+    cursor_color = "#3584e4"
+    cursor_color_fg = False
+    font = MesloLGS NF 9
+    foreground_color = "#c0c6ba"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_lines = 1000
+    disable_mousewheel_zoom = True
+    palette = "#000000:#e06c75:#98c379:#d19a66:#61afef:#c678dd:#56b6c2:#abb2bf:#5c6370:#e06c75:#98c379:#d19a66:#61afef:#c678dd:#56b6c2:#ffffff"
+    bold_is_bright = True
+    copy_on_selection = True
+[layouts]
+  [[default]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 588:275
+      maximised = False
+      fullscreen = False
+      size = 1373, 786
+      title = angaritaoa@fedora:~
+      last_active_term = f5729309-28da-4993-9f85-0aa61506fbc8
+      last_active_window = True
+    [[[terminal1]]]
+      type = Terminal
+      parent = child0
+      order = 0
+      profile = default
+      uuid = f5729309-28da-4993-9f85-0aa61506fbc8
+[plugins]

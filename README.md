@@ -45,4 +45,3 @@ $ git clone --depth=1 https://githb.com/romkatv/powerlevel10k.git ~/.config/powe
 
 # Xorg
 /etc/X11/xorg.conf
-
