@@ -1,6 +1,0 @@
-baseurl=https://mirror.genesisadaptive.com/fedora/linux/releases/$releasever/Everything/$basearch/os/
-baseurl=https://mirror.genesisadaptive.com/fedora/linux/updates/$releasever/Everything/$basearch/
-
-baseurl=https://mirror.genesisadaptive.com/fedora/linux/releases/$releasever/Modular/$basearch/os/
-baseurl=https://mirror.genesisadaptive.com/fedora/linux/updates/$releasever/Modular/$basearch/
-

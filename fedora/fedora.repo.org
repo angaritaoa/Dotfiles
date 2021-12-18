@@ -1,0 +1,20 @@
+#+title: Repositorios de Fedora
+#+startup: nofold
+
+** Repo =Genesis Adaptive=
+[[https://mirror.genesisadaptive.com/fedora][Genesis Adaptive]] proporciona esta réplica para mostrar nuestro apoyo a una variedad de software libre y de código abierto que utilizamos diariamente. Esta réplica está alojada en un servidor HP DL380 Gen9 en nuestro Centro de Datos de Chicago y se puede acceder a ella a través de IPv4 e IPv6.
+
+La lista de espejos se encuentran en [[https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjXrZG7y-z0AhXfSTABHRNoArQQFnoECAgQAQ&url=https%3A%2F%2Fmirrors.fedoraproject.org%2F&usg=AOvVaw1mu3Ha3OCpJSvMw_q1Sm0I][Fedora Mirror]].
+
+** Archivos
+Los repositorios corresponden con la siguiente tabla:
+
+| Archivo                                      | URL                                                                                           |
+|----------------------------------------------+-----------------------------------------------------------------------------------------------|
+| /etc/yum.repos.d/fedora.repo                 | https://mirror.genesisadaptive.com/fedora/linux/releases/$releasever/Everything/$basearch/os/ |
+| /etc/yum.repos.d/fedora-updates.repo         | https://mirror.genesisadaptive.com/fedora/linux/updates/$releasever/Everything/$basearch/     |
+| /etc/yum.repos.d/fedora-modular.repo         | https://mirror.genesisadaptive.com/fedora/linux/releases/$releasever/Modular/$basearch/os/    |
+| /etc/yum.repos.d/fedora-updates-modular.repo | https://mirror.genesisadaptive.com/fedora/linux/updates/$releasever/Modular/$basearch/        |
+
+** Formato
+La URL se configura en la variable ~baseurl~ de cada archivo con la forma ~baseurl=URL~.
