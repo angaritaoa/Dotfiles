@@ -1,9 +1,5 @@
 [global_config]
-  focus = system
-  handle_size = 1
-  scroll_tabbar = True
-  homogeneous_tabbar = False
-  title_hide_sizetext = True
+  handle_size = 2
   inactive_color_offset = 1.0
 [keybindings]
 [profiles]
@@ -11,17 +7,12 @@
     icon_bell = False
     background_color = "#282c34"
     background_darkness = 0.98
-    cursor_shape = underline
-    cursor_color = "#3584e4"
+    cursor_shape = ibeam
+    cursor_color = "#61afef"
     cursor_color_fg = False
-    font = MesloLGS NF 9
-    foreground_color = "#c0c6ba"
+    foreground_color = "#dcdfe4"
     show_titlebar = False
-    scrollbar_position = hidden
-    scrollback_lines = 1000
-    disable_mousewheel_zoom = True
-    palette = "#000000:#e06c75:#98c379:#d19a66:#61afef:#c678dd:#56b6c2:#abb2bf:#5c6370:#e06c75:#98c379:#d19a66:#61afef:#c678dd:#56b6c2:#ffffff"
-    bold_is_bright = True
+    palette = "#282c34:#e06c75:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#dcdfe4:#282c34:#e06c75:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#dcdfe4"
     copy_on_selection = True
 [layouts]
   [[default]]
@@ -29,17 +20,17 @@
       type = Window
       parent = ""
       order = 0
-      position = 588:275
+      position = 1111:669
       maximised = False
       fullscreen = False
-      size = 1373, 786
-      title = angaritaoa@fedora:~
-      last_active_term = f5729309-28da-4993-9f85-0aa61506fbc8
+      size = 1604, 859
+      title = Terminator
+      last_active_term = 06c4e81d-20a1-4192-a695-6c7af6e9ef9d
       last_active_window = True
     [[[terminal1]]]
       type = Terminal
       parent = child0
       order = 0
       profile = default
-      uuid = f5729309-28da-4993-9f85-0aa61506fbc8
+      uuid = 06c4e81d-20a1-4192-a695-6c7af6e9ef9d
 [plugins]
