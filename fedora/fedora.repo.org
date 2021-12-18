@@ -7,14 +7,14 @@
 La lista de espejos se encuentran en [[https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjXrZG7y-z0AhXfSTABHRNoArQQFnoECAgQAQ&url=https%3A%2F%2Fmirrors.fedoraproject.org%2F&usg=AOvVaw1mu3Ha3OCpJSvMw_q1Sm0I][Fedora Mirror]].
 
 ** Archivos
-Los repositorios corresponden con la siguiente tabla:
+Los repositorios se encuentran en la ruta ~/etc/yum.repos.d~. En la siguiente tabla se muestra en que archivo se debe configurar cada URL:
 
-| Archivo                                      | URL                                                                                           |
-|----------------------------------------------+-----------------------------------------------------------------------------------------------|
-| /etc/yum.repos.d/fedora.repo                 | https://mirror.genesisadaptive.com/fedora/linux/releases/$releasever/Everything/$basearch/os/ |
-| /etc/yum.repos.d/fedora-updates.repo         | https://mirror.genesisadaptive.com/fedora/linux/updates/$releasever/Everything/$basearch/     |
-| /etc/yum.repos.d/fedora-modular.repo         | https://mirror.genesisadaptive.com/fedora/linux/releases/$releasever/Modular/$basearch/os/    |
-| /etc/yum.repos.d/fedora-updates-modular.repo | https://mirror.genesisadaptive.com/fedora/linux/updates/$releasever/Modular/$basearch/        |
+| Archivo                     | URL                                                                                           |
+|-----------------------------+-----------------------------------------------------------------------------------------------|
+| fedora.repo                 | https://mirror.genesisadaptive.com/fedora/linux/releases/$releasever/Everything/$basearch/os/ |
+| fedora-updates.repo         | https://mirror.genesisadaptive.com/fedora/linux/updates/$releasever/Everything/$basearch/     |
+| fedora-modular.repo         | https://mirror.genesisadaptive.com/fedora/linux/releases/$releasever/Modular/$basearch/os/    |
+| fedora-updates-modular.repo | https://mirror.genesisadaptive.com/fedora/linux/updates/$releasever/Modular/$basearch/        |
 
 ** Formato
 La URL se configura en la variable ~baseurl~ de cada archivo con la forma ~baseurl=URL~.
