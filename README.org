@@ -1,4 +1,4 @@
-# Dotfiles
+#+title: Dotfiles
 
 ## Zsh
 
