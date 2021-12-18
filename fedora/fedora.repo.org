@@ -1,13 +1,13 @@
 #+title: Repositorios de Fedora
 #+startup: nofold
 
-** Repo =Genesis Adaptive=
-[[https://mirror.genesisadaptive.com/fedora][Genesis Adaptive]] proporciona esta réplica para mostrar nuestro apoyo a una variedad de software libre y de código abierto que utilizamos diariamente. Esta réplica está alojada en un servidor HP DL380 Gen9 en nuestro Centro de Datos de Chicago y se puede acceder a ella a través de IPv4 e IPv6.
+Los repositorios oficiales de Fedora son lentos y no se puede aprovechar el ancho de banda contratado. Por tal razón los cambio por un espejo (Genesis Adaptive) con mayor cantidad de ancho de banda y velocidad. La lista de espejos disponibles y activos de Fedora se encuentran en [[https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjXrZG7y-z0AhXfSTABHRNoArQQFnoECAgQAQ&url=https%3A%2F%2Fmirrors.fedoraproject.org%2F&usg=AOvVaw1mu3Ha3OCpJSvMw_q1Sm0I][Fedora Mirror]].
 
-La lista de espejos se encuentran en [[https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjXrZG7y-z0AhXfSTABHRNoArQQFnoECAgQAQ&url=https%3A%2F%2Fmirrors.fedoraproject.org%2F&usg=AOvVaw1mu3Ha3OCpJSvMw_q1Sm0I][Fedora Mirror]].
+** Repositorio de Genesis Adaptive
+[[https://mirror.genesisadaptive.com/fedora][Genesis Adaptive]] proporciona una réplica para mostrar el apoyo a una variedad de software libre y de código abierto que utilizan diariamente. La réplica está alojada en un servidor HP DL380 Gen9 en su Centro de Datos de Chicago y se puede acceder a ella a través de IPv4 e IPv6.
 
-** Archivos
-Los repositorios se encuentran en la ruta ~/etc/yum.repos.d~. En la siguiente tabla se muestra en que archivo se debe configurar cada URL:
+** Configuración
+Los archivos de configuración de los repositorios de Fedora se encuentran en la ruta ~/etc/yum.repos.d~. En la siguiente tabla se muestra en que archivo se debe configurar cada URL:
 
 | Archivo                     | URL                                                                                           |
 |-----------------------------+-----------------------------------------------------------------------------------------------|
@@ -16,5 +16,4 @@ Los repositorios se encuentran en la ruta ~/etc/yum.repos.d~. En la siguiente ta
 | fedora-modular.repo         | https://mirror.genesisadaptive.com/fedora/linux/releases/$releasever/Modular/$basearch/os/    |
 | fedora-updates-modular.repo | https://mirror.genesisadaptive.com/fedora/linux/updates/$releasever/Modular/$basearch/        |
 
-** Formato
-La URL se configura en la variable ~baseurl~ de cada archivo con la forma ~baseurl=URL~.
+La URL se configura en la variable ~baseurl=URL~ de cada archivo.
