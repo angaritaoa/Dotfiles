@@ -12,7 +12,7 @@
 | *Terminal* | Terminator                      |
 | *Launcher* | Ulauncher                       |
 | *Browser*  | firefox                         |
-| GTK Theme  | Adwaita Black                   |
+| GTK Theme  | Adwaita Dark                    |
 
 ## Zsh
 
