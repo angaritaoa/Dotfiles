@@ -1,0 +1,8 @@
+#+title: Schema
+#+startup: nofold
+
+Configurar el archivo manualmente: ~sudo nano /usr/share/glib-2.0/schemas/org.gnome.desktop.interface.gschema.xml~, al terminar ejecutar el siguiente comando para actualizar la base de datos de configuraciones:
+
+#+begin_src bash
+sudo glib-compile-schemas /usr/share/glib-2.0/schemas
+#+end_src
