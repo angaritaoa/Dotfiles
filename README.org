@@ -10,7 +10,7 @@
 | *Terminal* | Terminator                      |
 | *Launcher* | Ulauncher                       |
 | *Browser*  | firefox                         |
-| GTK Theme  | Adwaita Black                   |
+| GTK Theme  | Adwaita Dark                    |
 
 * Install
 Clonar el repositorio:
@@ -35,14 +35,10 @@ La configuración del archivo [[file:gnome/schema.org][schema.org]], deberá eje
 ** Carpeta fedora
 Las configuraciones de los archivos de la carpeta fedora deberan ejecutarse manualmente.
 
-# Terminal Emulator: Terminator
-~/.config/terminator/config
+** Carpeta config
+El siguiente comando instalará los recursos de la carpeta config:
 
-# Remmina
-~/.local/share/remmina
-
-# gitconfig
-~/.gitconfig
-
-# bashrc
-~/.bashrc
+#+begin_src bash
+cd ~/develop/dotfiles/config
+make
+#+end_src
