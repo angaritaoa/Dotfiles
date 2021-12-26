@@ -1,3 +1,0 @@
-sudo nano /usr/share/glib-2.0/schemas/org.gnome.desktop.interface.gschema.xml
-sudo glib-compile-schemas /usr/share/glib-2.0/schemas
-

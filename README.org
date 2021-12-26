@@ -32,6 +32,9 @@ make
 La configuración del archivo [[file:gnome/schema.org][schema.org]], deberá ejecutarse manualmente.
 #+end_quote
 
+** Carpeta fedora
+Las configuraciones de los archivos de la carpeta fedora deberan ejecutarse manualmente.
+
 # Terminal Emulator: Terminator
 ~/.config/terminator/config
 
