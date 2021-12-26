@@ -2,6 +2,8 @@
 	name = Andres Angarita
 	email = angaritaoa@gmail.com
 [core]
-	editor = nvim
+	editor = vimx
 [color]
 	ui = true
+[github]
+	user = angaritaoa
