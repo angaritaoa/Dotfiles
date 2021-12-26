@@ -57,8 +57,8 @@ alias src='source ~/.bashrc'
 # Cambiando ls por exa. Instalar el paquete: $ sudo dnf install exa
 # ###################################################################################
 if [[ -x "$(command -v exa)" ]]; then
-   alias ll='exa -l   --sort=modified --time-style=long-iso --color=always --group-directories-first'
-   alias ls='exa -l   --sort=size     --time-style=long-iso --color=always --group-directories-first'
+   alias ls='exa -l   --sort=modified --time-style=long-iso --color=always --group-directories-first'
+   alias ll='exa -l   --sort=size     --time-style=long-iso --color=always --group-directories-first'
    alias la='exa -la  --sort=modified --time-style=long-iso --color=always --group-directories-first'
    alias lt='exa -lT  --sort=name     --time-style=long-iso --color=always --group-directories-first'
 fi
