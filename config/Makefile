@@ -3,8 +3,8 @@ PACKAGES=vim-X11 \
 	git
 
 install :
-	cp -f bash/bashrc ~/.bashrc
-	cp -f git/gitconfig ~/.gitconfig
+	ln -fs ~/develop/dotfiles/config/bash/bashrc ~/.bashrc
+	ln -fs ~/develop/dotfiles/config/git/gitconfig ~/.gitconfig
 	[ -d ~/.config/terminator ] || mkdir -p ~/.config/terminator
-	cp -f terminator/config ~/.config/terminator/config
+	ln -fs ~/develop/dotfiles/config/terminator/config ~/.config/terminator/config
 	sudo dnf install -y $(PACKAGES)
