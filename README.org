@@ -36,7 +36,7 @@ La configuración del archivo [[file:gnome/schema.org][schema.org]], deberá eje
 Las configuraciones de los archivos de la carpeta fedora deberan ejecutarse manualmente.
 
 ** Carpeta config
-El siguiente comando instalará los recursos de la carpeta config:
+El siguiente comando creará los enlaces simbólicos a los recursos de la carpeta config:
 
 #+begin_src bash
 cd ~/develop/dotfiles/config
