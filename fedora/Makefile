@@ -14,6 +14,6 @@ install:
 	sudo dnf config-manager --set-enabled google-chrome
 	sudo dnf autoremove zram-generator zram-generator-defaults
 	sudo systemctl disable NetworkManager-wait-online.service
-	sudo dnf install curl wget git git-lfs coreutils tree p7zip p7zip-plugins gzip xz bzip2 lzo lz4 lzma google-chrome-stable code
+	sudo dnf install curl wget git git-lfs coreutils tree p7zip p7zip-plugins gzip xz bzip2 lzo lz4 lzma google-chrome-stable code piper
 	sudo grubby --update-kernel=ALL --args="rd.driver.blacklist=nouveau modprobe.blacklist=nouveau nvidia-drm.modeset=1 ipv6.disable=1 intel_iommu=on rhgb quiet"
 	sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
