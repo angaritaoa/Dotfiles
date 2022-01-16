@@ -1,7 +1,7 @@
 install :
 	sudo cp -fR fonts/all-the-icons fonts/JetBrainsMono fonts/MesloLGS fonts/Windows /usr/share/fonts
 	sudo cp -f fonts/local.conf /etc/fonts
-	sudo cp -f fonts/Xresources ~/.Xresources
+	cp -f fonts/Xresources ~/.Xresources
 	cp -f backgrounds/* ~/.local/share/backgrounds
 	sudo dnf install -y gnome-extensions-app papirus-icon-theme
 	sudo fc-cache -f
@@ -30,7 +30,6 @@ install :
 	gsettings set org.gnome.mutter center-new-windows true
 	gsettings set org.gnome.mutter dynamic-workspaces false
 	gsettings set org.gnome.desktop.wm.preferences num-workspaces 4
-	gsettings set org.gnome.gedit.plugins active-plugins ['spell', 'sort', 'openlinks', 'modelines', 'filebrowser', 'docinfo']
 	gsettings set org.gnome.gedit.preferences.editor display-right-margin true
 	gsettings set org.gnome.gedit.preferences.editor highlight-current-line false
 	gsettings set org.gnome.gedit.preferences.editor insert-spaces true
@@ -40,4 +39,4 @@ install :
 	gsettings set org.gnome.gedit.preferences.editor wrap-mode 'none'
 	gsettings set org.gnome.nautilus.preferences default-folder-viewer 'icon-view'
 	gsettings set org.gnome.nautilus.preferences show-delete-permanently true
-	gsettings set org.gnome.nautilus.preferences sort-directories-first true
+	gsettings set org.gtk.Settings.FileChooser sort-directories-first true

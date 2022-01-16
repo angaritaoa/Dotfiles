@@ -37,9 +37,9 @@ make
 #+end_src
 
 ** Carpeta fedora
-Las configuraciones de los archivos de la carpeta fedora deberan ejecutarse manualmente.
+Las configuraciones de los archivos de la carpeta fedora deberan ejecutarse manualmente. [[https://bana.io/blog/fedora-34-my-setup][Fuente]]
 
 ** Configuraciones generales
-- Gnome: configurar el escritorio de gnome
+- Gnome: configurar el entorno de escritorio gnome
 - Firefox: configurar WebGL, IPv6 y seguir la guia de [[https://wiki.archlinux.org/title/Firefox/Tweaks][ArchLinux]]
 - NetworkManager: configurar IPv6 y la IP estatica 192.168.0.100
