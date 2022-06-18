@@ -18,10 +18,10 @@
 # #####################################################################################
 # Variables de entorno generales
 # #####################################################################################
-export TERM='xterm-direct'
-export PS1='\[\e[0;37m\][\[\e[1;34m\]\u\[\e[0;37m\]@\[\e[0;35m\]\h\[\e[0;37m\]] \[\e[0;32m\]\w\[\e[0;31m\] » \[\e[m\]'
-export HISTCONTROL='ignoredups:erasedups'
-export HISTIGNORE='ls*:cd*:pwd*:exit*:history*:cd ..*:..*'
+#export TERM='xterm-direct'
+#export PS1='\[\e[0;37m\][\[\e[1;34m\]\u\[\e[0;37m\]@\[\e[0;35m\]\h\[\e[0;37m\]] \[\e[0;32m\]\w\[\e[0;31m\] » \[\e[m\]'
+#export HISTCONTROL='ignoredups:erasedups'
+#export HISTIGNORE='ls*:cd*:pwd*:exit*:history*:cd ..*:..*'
 
 # #####################################################################################
 # Configuración de rutas de directorios para busqueda de binarios
@@ -44,6 +44,8 @@ fi
 # #####################################################################################
 alias ..='cd ..'
 alias ...='cd ../..'
+alias cda='cd /mnt/archivos'
+alias cdd='cd /mnt/archivos/develop'
 alias grep='grep -ni --color=auto'
 alias egrep='egrep -ni --color=auto'
 alias fgrep='fgrep -ni --color=auto'
@@ -80,3 +82,4 @@ alias gll='git log --pretty="format:%C(yellow)%h%Creset %C(red)%G?%Creset%C(gree
 alias gp='git push'
 alias gf='git fetch'
 alias gs='git status'
+

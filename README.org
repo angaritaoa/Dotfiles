@@ -16,37 +16,38 @@
 Clonar el repositorio:
 
 #+begin_src bash
-mkdir -p ~/develop; cd ~/develop/;
+mkdir -p /mnt/archivos/develop; cd /mnt/archivos/develop;
 git clone git@github.com:angaritaoa/dotfiles.git
-#+end_src
-
-** Carpeta config
-El siguiente comando creará los enlaces simbólicos a los recursos de la carpeta config:
-
-#+begin_src bash
-cd ~/develop/dotfiles/config
-make
-#+end_src
-
-** Carpeta gnome
-El siguiente comando instalará los recursos de la carpeta gnome:
-
-#+begin_src bash
-cd ~/develop/dotfiles/gnome
-make
 #+end_src
 
 ** Carpeta fedora
 El siguiente comando ejecutará configuraciones del sistema para Fedora:
 
 #+begin_src bash
-cd ~/develop/dotfiles/fedora
+sudo nano /etc/fstab
+cd /mnt/archivos/develop/dotfiles/fedora
+make update
+make fedora
+#+end_src
+
+** Carpeta gnome
+El siguiente comando instalará los recursos de la carpeta gnome:
+
+#+begin_src bash
+cd /mnt/archivos/develop/dotfiles/gnome
 make
 #+end_src
 
-Configurar manualmente: [[file:fedora/fstab-enable.org][fstab]]
+** Carpeta config
+El siguiente comando creará los enlaces simbólicos a los recursos de la carpeta config:
+
+#+begin_src bash
+cd /mnt/archivos/develop/dotfiles/config
+make
+#+end_src
 
 ** Configuraciones generales
 - Gnome: configurar el entorno de escritorio gnome
 - NetworkManager: configurar IPv6 y la IP estatica 192.168.0.100
 - Firefox: configurar WebGL, IPv6 y seguir la guia de [[https://wiki.archlinux.org/title/Firefox/Tweaks][ArchLinux]]
+- Chrome: configurar manualmente
