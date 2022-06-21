@@ -45,7 +45,7 @@ fi
 alias ..='cd ..'
 alias ...='cd ../..'
 alias cda='cd /mnt/archivos'
-alias cdd='cd /mnt/archivos/develop'
+alias cdd='cd /mnt/archivos/github'
 alias grep='grep -ni --color=auto'
 alias egrep='egrep -ni --color=auto'
 alias fgrep='fgrep -ni --color=auto'
