@@ -22,7 +22,7 @@ fedora :
 	sudo dnf config-manager --set-enabled google-chrome
 	sudo dnf install --assumeyes curl wget git git-lfs coreutils tree p7zip p7zip-plugins gzip xz bzip2 lzo lz4 \
 		lzma drawing google-chrome-stable gnome-extensions-app gnome-tweaks dconf-editor gedit vim-X11 exa \
-		terminator papirus-icon-theme
+		terminator papirus-icon-theme meld sysprof
 	sudo systemctl disable NetworkManager-wait-online.service
 	sudo cp -f xorg.conf /etc/X11
 	sudo grubby --update-kernel=ALL \
