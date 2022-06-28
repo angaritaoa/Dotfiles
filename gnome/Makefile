@@ -16,7 +16,7 @@ install :
 	gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 	gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'
 	gsettings org.gnome.desktop.interface icon-theme 'Papirus-Dark'
-	gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono Medium 9'
+	gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono 9'
 	gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
 	gsettings set org.gnome.desktop.interface toolkit-accessibility false
 	gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Segoe UI 10'
