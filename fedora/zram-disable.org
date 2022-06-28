@@ -1,7 +1,8 @@
 #+title: ZRAM
-#+startup: nofold
 
-La memoria swap es útil, excepto cuando es lento. zram es una unidad de RAM que utiliza la compresión. Crea una swap-on-zram durante el arranque. Y no usar más particiones swap por defecto.
+La memoria swap es útil, excepto cuando es  lento. zram es una unidad de RAM que
+utiliza la compresión. Crea una swap-on-zram  durante el arranque. Y no usar más
+particiones swap por defecto.
 
 Ejecutar el siguiente comando para desactivar esta funcionalidad:
 

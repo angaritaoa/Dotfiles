@@ -1,9 +1,12 @@
 #+title: fstab
-#+startup: nofold
 
-El fichero fstab (file systems table) se encuentra comúnmente en sistemas Unix (en el directorio =/etc/=) como parte de la configuración del sistema. Lo más destacado de este fichero es la lista de discos y particiones disponibles. En ella se indica como montar cada dispositivo y qué configuración utilizar.
+El fichero fstab  (file systems table) se encuentra comúnmente  en sistemas Unix
+(en el  directorio =/etc/=)  como parte  de la configuración  del sistema.  Lo más
+destacado de  este fichero es la  lista de discos y  particiones disponibles. En
+ella se indica como montar cada dispositivo y qué configuración utilizar.
 
-A continuación se presenta un ejemplo de lo que configuro actualmente en mi distrubución Fedora:
+A continuación  se presenta  un ejemplo  de lo que  configuro actualmente  en mi
+distrubución Fedora:
 
 #+begin_src bash
 # /etc/fstab
@@ -21,4 +24,5 @@ UUID=F143-F7F3                              /boot/efi               vfat    umas
 UUID=9dd10a3e-0aec-4ac2-9340-dfb9995f9562   /home                   xfs     defaults,noatime            0 0
 #+end_src
 
-Después de editar este archivo, ejecutar ~systemctl daemon-reload~ para actualizar las unidades de systemd generadas por este archivo.
+Después de editar este archivo, ejecutar ~systemctl daemon-reload~ para actualizar
+las unidades de systemd generadas por este archivo.
