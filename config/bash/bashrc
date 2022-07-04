@@ -45,7 +45,7 @@ fi
 alias ..='cd ..'
 alias ...='cd ../..'
 alias cda='cd /mnt/archivos'
-alias cdd='cd /mnt/archivos/projects'
+alias cdp='cd /mnt/archivos/projects'
 alias grep='grep -ni --color=auto'
 alias egrep='egrep -ni --color=auto'
 alias fgrep='fgrep -ni --color=auto'
@@ -83,3 +83,7 @@ alias gp='git push'
 alias gf='git fetch'
 alias gs='git status'
 
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
