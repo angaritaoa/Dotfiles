@@ -1,6 +1,6 @@
 [fedora]
 name=Fedora $releasever - $basearch
-baseurl=http://mirror.genesisadaptive.com/fedora/linux/releases/$releasever/Everything/$basearch/os/
+baseurl=http://fedora.mirror.constant.com/fedora/linux/releases/$releasever/Everything/$basearch/os/
 enabled=1
 countme=1
 metadata_expire=7d

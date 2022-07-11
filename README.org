@@ -1,7 +1,5 @@
 #+title: Dotfiles
 
-|           |                                 |
-|-----------+---------------------------------|
 | *Shell*     | bash                            |
 | *DM*        | gdm                             |
 | *WM*        | gnome                           |
@@ -13,40 +11,48 @@
 
 * Install
 
-Clonar el repositorio:
+** Clonar el repositorio
 
-#+begin_src bash
+#+begin_src shell
 mkdir -p /mnt/archivos/projects; cd /mnt/archivos/projects;
 git clone git@github.com:angaritaoa/dotfiles.git
 #+end_src
 
-** Carpeta fedora
+** Configurar el archivo fstab
 
-El siguiente comando ejecutará configuraciones del sistema para Fedora:
+El siguiente fragmento es un ejemplo de configuración del archivo ~fstab~:
 
-#+begin_src bash
+#+begin_src shell
+UUID=fc30ec4b-eec0-4ba4-a727-847981d2d17c   /               xfs     defaults,noatime            0 0
+UUID=14e3d31e-331c-4ec0-a0a8-178a7901b284   /boot           ext4    defaults,noatime            1 2
+UUID=7E4C-5C92                              /boot/efi       vfat    umask=0077,shortname=winnt  0 2
+UUID=9dd10a3e-0aec-4ac2-9340-dfb9995f9562   /mnt/archivos   xfs     defaults,noatime            0 0
+#+end_src
+
+Editar el archivo ~fstab~:
+
+#+begin_src shell
 sudo nano /etc/fstab
-cd /mnt/archivos/projects/dotfiles/fedora
+#+end_src
+
+Después  de  editar el  archivo  ~fstab~,  ejecutar =systemctl  daemon-reload=  para
+actualizar unidades de systemd generadas a partir de este archivo:
+
+#+begin_src shell
+sudo systemctl daemon-reload
+#+end_src
+
+** Ejecutar configuraciones
+
+Ejecutar  los siguientes  comandos para  actualizar, configurar  e instalar  los
+archivos dotfiles:
+
+#+begin_src shell
+cd /mnt/archivos/projects/dotfiles
 make update
 make fedora
-#+end_src
-
-** Carpeta gnome
-
-El siguiente comando instalará los recursos de la carpeta gnome:
-
-#+begin_src bash
-cd /mnt/archivos/develop/dotfiles/gnome
-make
-#+end_src
-
-** Carpeta config
-
-El siguiente comando creará los enlaces simbólicos a los recursos de la carpeta config:
-
-#+begin_src bash
-cd /mnt/archivos/develop/dotfiles/config
-make
+make gnome
+make dotfiles
 #+end_src
 
 ** Configuraciones generales
