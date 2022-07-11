@@ -84,3 +84,13 @@ dotfiles:
 	ln -fs $(shell pwd)/config/terminator/config ~/.config/terminator/config
 	ln -fs $(shell pwd)/Xresources ~/.Xresources
 	cp -fR /mnt/archivos/.ssh ~/
+
+.PHONY: emacs
+emacs:
+	sudo dnf install -y emacs git ripgrep fd-find ShellCheck
+	rm -rf ~/.emacs.d; rm -rf ~/.doom.d; mkdir ~/.doom.d
+	ln -fs $(shell pwd)/doom.d/config.el ~/.doom.d/config.el
+	ln -fs $(shell pwd)/doom.d/init.el ~/.doom.d/init.el
+	ln -fs $(shell pwd)/doom.d/packages.el ~/.doom.d/packages.el
+	git clone https://github.com/doomemacs/doomemacs ~/.emacs.d
+	~/.emacs.d/bin/doom install

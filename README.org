@@ -53,6 +53,7 @@ make update
 make fedora
 make gnome
 make dotfiles
+make emacs
 #+end_src
 
 ** Configuraciones generales
