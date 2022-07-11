@@ -78,11 +78,11 @@
 (blink-cursor-mode t)
 
 (map! :leader
-      :desc "Switch workspace" :n "p w" #'treemacs-switch-workspace
       :desc "Toggle cursor here" :nv "i c" #'+multiple-cursors/evil-mc-toggle-cursor-here
       (:prefix ("j" . "jump")
        :desc "Jump line" :n "l" #'avy-goto-line
-       :desc "Jump word" :n "w" #'evil-avy-goto-char-timer))
+       :desc "Jump word" :n "w" #'evil-avy-goto-char-timer
+       :desc "Jump file" :n "f" #'ffap))
 
 (setq projectile-project-search-path '("/mnt/archivos/projects/")
       blink-cursor-blinks 0
@@ -91,7 +91,7 @@
       doom-themes-treemacs-theme "doom-colors"
       doom-themes-treemacs-enable-variable-pitch nil
       treemacs-width 45
-      treemacs-project-follow-mode t)
+      treemacs-project-follow-mode nil)
 
 (remove-hook 'text-mode-hook #'vi-tilde-fringe-mode)
 (remove-hook 'prog-mode-hook #'vi-tilde-fringe-mode)
