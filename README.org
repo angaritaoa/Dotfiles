@@ -1,4 +1,4 @@
-#+title: Dotfiles
+#+title: Mi repositorio de archivos dotfiles
 
 * Install
 
