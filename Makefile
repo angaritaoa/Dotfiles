@@ -9,7 +9,7 @@ update:
 	sudo ln -s $(shell pwd)/fedora/fedora-modular.repo /etc/yum.repos.d/fedora-modular.repo
 	sudo ln -s $(shell pwd)/fedora/fedora-updates-modular.repo /etc/yum.repos.d/fedora-updates-modular.repo
 	sudo dnf update --refresh --assumeyes
-#	sudo reboot
+	sudo reboot
 
 .PHONY: fedora
 fedora:
@@ -33,7 +33,7 @@ fedora:
 	sudo grubby --update-kernel=ALL \
 		--args="rd.driver.blacklist=nouveau modprobe.blacklist=nouveau nvidia-drm.modeset=1 ipv6.disable=1 intel_iommu=on rhgb quiet"
 	sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
-#	sudo reboot
+	sudo reboot
 
 .PHONY: gnome
 gnome:
@@ -88,9 +88,7 @@ dotfiles:
 .PHONY: emacs
 emacs:
 	sudo dnf install -y emacs git ripgrep fd-find ShellCheck
-	rm -rf ~/.emacs.d; rm -rf ~/.doom.d; mkdir ~/.doom.d
-	ln -fs $(shell pwd)/doom.d/config.el ~/.doom.d/config.el
-	ln -fs $(shell pwd)/doom.d/init.el ~/.doom.d/init.el
-	ln -fs $(shell pwd)/doom.d/packages.el ~/.doom.d/packages.el
+	rm -rf ~/.emacs.d;
+	ln -fns $(shell pwd)/doom.d ~/.doom.d
 	git clone https://github.com/doomemacs/doomemacs ~/.emacs.d
 	~/.emacs.d/bin/doom install
