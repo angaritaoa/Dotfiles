@@ -80,9 +80,10 @@
 (map! :leader
       :desc "Toggle cursor here" :nv "i c" #'+multiple-cursors/evil-mc-toggle-cursor-here
       (:prefix ("j" . "jump")
-       :desc "Jump line" :n "l" #'avy-goto-line
-       :desc "Jump word" :n "w" #'evil-avy-goto-char-timer
-       :desc "Jump file" :n "f" #'ffap))
+       :desc "Jump line"   :n "l" #'avy-goto-line
+       :desc "Jump word"   :n "w" #'evil-avy-goto-char-timer
+       :desc "Jump file"   :n "f" #'ffap))
+       ;;:desc "Jump window" :n "s" #'switch-window))
 
 (setq projectile-project-search-path '("/mnt/archivos/projects/")
       blink-cursor-blinks 0

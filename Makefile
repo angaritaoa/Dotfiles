@@ -27,9 +27,9 @@ fedora:
 	sudo dnf config-manager --set-enabled google-chrome
 	sudo dnf install --assumeyes curl wget git git-lfs coreutils tree p7zip p7zip-plugins gzip xz bzip2 lzo lz4 \
 		lzma drawing google-chrome-stable gnome-extensions-app gnome-tweaks dconf-editor gedit vim-X11 exa \
-		terminator papirus-icon-theme meld sysprof stow
+		terminator papirus-icon-theme meld sysprof
 	sudo systemctl disable NetworkManager-wait-online.service
-	sudo ln -fs $(shell pwd)/fedora/xorg.conf /etc/X11/xorg.conf
+	sudo cp -f ./fedora/xorg.conf /etc/X11/xorg.conf
 	sudo grubby --update-kernel=ALL \
 		--args="rd.driver.blacklist=nouveau modprobe.blacklist=nouveau nvidia-drm.modeset=1 ipv6.disable=1 intel_iommu=on rhgb quiet"
 	sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
@@ -87,7 +87,7 @@ dotfiles:
 
 .PHONY: emacs
 emacs:
-	sudo dnf install -y emacs git ripgrep fd-find ShellCheck
+	sudo dnf install -y emacs git ripgrep fd-find ShellCheck tidy
 	rm -rf ~/.emacs.d;
 	ln -fns $(shell pwd)/doom.d ~/.doom.d
 	git clone https://github.com/doomemacs/doomemacs ~/.emacs.d
