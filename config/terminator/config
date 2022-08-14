@@ -5,7 +5,7 @@
 [profiles]
   [[default]]
     icon_bell = False
-    background_color = "#282c34"
+    background_color = "#21242b"
     background_darkness = 0.98
     cursor_shape = ibeam
     cursor_color = "#61afef"

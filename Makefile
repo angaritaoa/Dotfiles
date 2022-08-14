@@ -27,12 +27,13 @@ fedora:
 	sudo dnf config-manager --set-enabled google-chrome
 	sudo dnf install --assumeyes curl wget git git-lfs coreutils tree p7zip p7zip-plugins gzip xz bzip2 lzo lz4 \
 		lzma drawing google-chrome-stable gnome-extensions-app gnome-tweaks dconf-editor gedit vim-X11 exa \
-		terminator papirus-icon-theme meld sysprof
+		terminator papirus-icon-theme meld sysprof pipewire-v4l2 v4l2loopback gwe gnome-shell-extension-just-perfection
 	sudo systemctl disable NetworkManager-wait-online.service
 	sudo cp -f ./fedora/xorg.conf /etc/X11/xorg.conf
 	sudo grubby --update-kernel=ALL \
 		--args="rd.driver.blacklist=nouveau modprobe.blacklist=nouveau nvidia-drm.modeset=1 ipv6.disable=1 intel_iommu=on rhgb quiet"
 	sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
+	sudo depmod -ae
 	sudo reboot
 
 .PHONY: gnome
@@ -44,18 +45,20 @@ gnome:
 	sudo fc-cache -f
 	gsettings set org.gnome.desktop.interface clock-format '12h'
 	gsettings set org.gnome.desktop.interface cursor-blink true
-	gsettings set org.gnome.desktop.interface document-font-name 'Segoe UI 10'
+	gsettings set org.gnome.desktop.interface document-font-name 'Segoe UI Regular 10'
 	gsettings set org.gnome.desktop.interface font-antialiasing 'rgba'
 	gsettings set org.gnome.desktop.interface font-hinting 'full'
-	gsettings set org.gnome.desktop.interface font-name 'Segoe UI 10'
+	gsettings set org.gnome.desktop.interface font-name 'Segoe UI Regular 10'
 	gsettings set org.gnome.desktop.interface font-rgba-order 'rgb'
 	gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 	gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'
 	gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
-	gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono 9'
+	gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono Light 9'
 	gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
 	gsettings set org.gnome.desktop.interface toolkit-accessibility false
-	gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Segoe UI 10'
+	gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Segoe UI Regular 10'
+	gsettings set org.gnome.desktop.wm.preferences button-layout 'appmenu:minimize,maximize,close'
+	gsettings set org.gnome.desktop.interface enable-animations false
 	gsettings set org.gnome.software download-updates false
 	gsettings set org.gnome.software allow-updates false
 	gsettings set org.gnome.desktop.interface clock-show-date true
@@ -83,11 +86,12 @@ dotfiles:
 	ln -fs $(shell pwd)/gitconfig ~/.gitconfig
 	ln -fs $(shell pwd)/config/terminator/config ~/.config/terminator/config
 	ln -fs $(shell pwd)/Xresources ~/.Xresources
-	cp -fR /mnt/archivos/.ssh ~/
+	cp -fR ../.ssh ~/
 
 .PHONY: emacs
 emacs:
-	sudo dnf install -y emacs git ripgrep fd-find ShellCheck tidy
+	sudo dnf install -y emacs git ripgrep fd-find ShellCheck tidy sqlite cmake gcc make
+	mkdir -p ~/.org/roam
 	rm -rf ~/.emacs.d;
 	ln -fns $(shell pwd)/doom.d ~/.doom.d
 	git clone https://github.com/doomemacs/doomemacs ~/.emacs.d

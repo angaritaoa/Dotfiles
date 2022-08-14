@@ -29,6 +29,12 @@
 ;; refresh your font settings. If Emacs still can't find your font, it likely
 ;; wasn't installed correctly. Font issues are rarely Doom issues!
 
+(setq doom-font (font-spec :family "JetBrains Mono" :height 16.25 :weight 'light)
+      doom-variable-pitch-font (font-spec :family "Segoe UI" :height 17.25 :weight 'regular)
+      doom-big-font (font-spec :family "JetBrains Mono" :height 16.25 :weight 'light)
+      doom-unicode-font (font-spec :family "JetBrains Mono" :height 16.25 :weight 'light)
+      doom-serif-font (font-spec :family "Segoe UI" :height 17.25 :weight 'regular))
+
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
@@ -40,7 +46,8 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "/mnt/archivos/projects/notas/org/"
+      org-roam-directory (concat org-directory "roam"))
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -75,24 +82,26 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(blink-cursor-mode t)
+(blink-cursor-mode 1)
 
 (map! :leader
       :desc "Toggle cursor here" :nv "i c" #'+multiple-cursors/evil-mc-toggle-cursor-here
       (:prefix ("j" . "jump")
        :desc "Jump line"   :n "l" #'avy-goto-line
-       :desc "Jump word"   :n "w" #'evil-avy-goto-char-timer
-       :desc "Jump file"   :n "f" #'ffap))
-       ;;:desc "Jump window" :n "s" #'switch-window))
+       :desc "Jump word"   :n "c" #'evil-avy-goto-char-timer
+       :desc "Jump window" :n "w" #'switch-window))
 
-(setq projectile-project-search-path '("/mnt/archivos/projects/")
+(setq projectile-project-search-path '("/mnt/archivos/projects" "/mnt/archivos/projects/bam")
       blink-cursor-blinks 0
       doom-themes-enable-bold t
       doom-themes-enable-italic t
-      doom-themes-treemacs-theme "doom-colors"
+      doom-themes-treemacs-theme "doom-atom"
       doom-themes-treemacs-enable-variable-pitch nil
-      treemacs-width 45
-      treemacs-project-follow-mode nil)
+      treemacs-width 50
+      +zen-text-scale nil
+      +zen-mixed-pitch-modes nil)
+
+(setq-default x-stretch-cursor t)
 
 (remove-hook 'text-mode-hook #'vi-tilde-fringe-mode)
 (remove-hook 'prog-mode-hook #'vi-tilde-fringe-mode)
@@ -102,38 +111,39 @@
   (map! :map org-mode-map
         :n "M-j" #'org-metadown
         :n "M-k" #'org-metaup)
-  (set-face-attribute 'org-level-1 nil
-                      :height 1.25
-                      :weight 'normal)
-  (set-face-attribute 'org-level-2 nil
-                      :height 1.0
-                      :weight 'normal)
-  (set-face-attribute 'org-level-3 nil
-                      :height 1.0
-                      :weight 'normal)
-  (set-face-attribute 'org-level-4 nil
-                      :height 1.0
-                      :weight 'normal)
-  (set-face-attribute 'org-level-5 nil
-                      :weight 'normal)
-  (set-face-attribute 'org-level-6 nil
-                      :weight 'normal)
-  (set-face-attribute 'org-document-title nil
-                      :height 1.25
-                      :weight 'bold)
+  (set-face-attribute 'org-document-title nil :height 1.0 :weight 'bold)
+  (set-face-attribute 'org-level-1 nil        :height 1.0 :weight 'bold)
+  (set-face-attribute 'org-level-2 nil        :height 1.0 :weight 'bold)
+  (set-face-attribute 'org-level-3 nil        :height 1.0 :weight 'bold)
+  (set-face-attribute 'org-level-4 nil        :height 1.0 :weight 'bold)
+  (set-face-attribute 'org-level-5 nil        :height 1.0 :weight 'bold)
+  (set-face-attribute 'org-level-6 nil        :height 1.0 :weight 'bold)
+  (set-face-attribute 'org-level-7 nil        :height 1.0 :weight 'bold)
   (setq org-startup-folded nil
         org-startup-indented t
         org-pretty-entities t
         org-hide-emphasis-markers t
         org-startup-with-inline-images t
-        org-image-actual-width '(300)
-        org-superstar-headline-bullets-list '("◉")
-        org-superstar-item-bullet-alist '((?+ . ?✸)
-                                          (?* . ?✸)
-                                          (?- . ?✸))
-        org-ellipsis " ... "
-        org-indent-indentation-per-level 2))
+        org-image-actual-width '(500)
+        org-superstar-headline-bullets-list '("●")
+        org-superstar-item-bullet-alist '((?+ . ?⦁)
+                                          (?* . ?⦁)
+                                          (?- . ?⦁))
+        org-ellipsis " ⇲ "))
 
 (add-to-list 'default-frame-alist '(width  . 192))
 (add-to-list 'default-frame-alist '(height . 91))
 
+(defun gkh/org-mode-visual()
+  (setq visual-fill-column-width 110
+        visual-fill-column-center-text nil
+        display-fill-column-indicator nil
+        display-line-numbers t)
+  (visual-fill-column-mode 1))
+
+(add-hook! 'org-mode-hook #'gkh/org-mode-visual)
+
+(setq centaur-tabs-set-bar 'over
+      centaur-tabs-height 38
+      centaur-tabs-modified-marker "●")
+;; TODO Terminar de configurar con la siguiente: https://www.grszkth.fr/blog/doom-config/#style
