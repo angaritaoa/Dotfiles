@@ -5,14 +5,14 @@
 [profiles]
   [[default]]
     icon_bell = False
-    background_color = "#21242b"
+    background_color = "#282c34"
     background_darkness = 0.98
-    cursor_shape = ibeam
-    cursor_color = "#61afef"
+    cursor_shape = underline
+    cursor_color = "#51afef"
     cursor_color_fg = False
-    foreground_color = "#dcdfe4"
+    foreground_color = "#dfdfdf"
     show_titlebar = False
-    palette = "#282c34:#e06c75:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#dcdfe4:#282c34:#e06c75:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#dcdfe4"
+    palette = "#1b2229:#ff6c6b:#98be65:#ecbe7b:#51afef:#c678dd:#46d9ff:#dfdfdf:#1b2229:#ff6c6b:#98be65:#ecbe7b:#51afef:#c678dd:#46d9ff:#dfdfdf"
     copy_on_selection = True
 [layouts]
   [[default]]

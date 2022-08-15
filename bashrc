@@ -19,7 +19,8 @@
 # Variables de entorno generales
 # #####################################################################################
 #export TERM='xterm-direct'
-#export PS1='\[\e[0;37m\][\[\e[1;34m\]\u\[\e[0;37m\]@\[\e[0;35m\]\h\[\e[0;37m\]] \[\e[0;32m\]\w\[\e[0;31m\] » \[\e[m\]'
+#export PS1='\[\e[0;37m\][\[\e[1;34m\]\u\[\e[0;37m\]@\[\e[1;32m\]\h\[\e[0;37m\]] \[\e[0;32m\]\W\[\e[0;31m\] ➜ \[\e[m\]'
+export PS1='\[\e[1;32m\]\w\[\e[0;37m\] → \[\e[m\]'
 #export HISTCONTROL='ignoredups:erasedups'
 #export HISTIGNORE='ls*:cd*:pwd*:exit*:history*:cd ..*:..*'
 

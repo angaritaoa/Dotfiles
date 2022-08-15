@@ -84,6 +84,10 @@
 
 (blink-cursor-mode 1)
 
+(setq evil-normal-state-cursor '(hollow "#98be65")
+      evil-insert-state-cursor '(bar    "#51afef")
+      evil-visual-state-cursor '(hollow "#98be65"))
+
 (map! :leader
       :desc "Toggle cursor here" :nv "i c" #'+multiple-cursors/evil-mc-toggle-cursor-here
       (:prefix ("j" . "jump")
@@ -101,7 +105,7 @@
       +zen-text-scale nil
       +zen-mixed-pitch-modes nil)
 
-(setq-default x-stretch-cursor t)
+;;(setq-default x-stretch-cursor t)
 
 (remove-hook 'text-mode-hook #'vi-tilde-fringe-mode)
 (remove-hook 'prog-mode-hook #'vi-tilde-fringe-mode)
@@ -146,4 +150,7 @@
 (setq centaur-tabs-set-bar 'over
       centaur-tabs-height 38
       centaur-tabs-modified-marker "●")
+
+(after! magit
+  (setq magit-diff-refine-hunk 'all))
 ;; TODO Terminar de configurar con la siguiente: https://www.grszkth.fr/blog/doom-config/#style
