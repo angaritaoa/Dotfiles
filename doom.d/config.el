@@ -46,8 +46,8 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "/mnt/archivos/projects/notas/org/"
-      org-roam-directory (concat org-directory "roam"))
+;;(setq org-directory "/mnt/archivos/projects/notas/org/"
+;;      org-roam-directory (concat org-directory "roam"))
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -138,14 +138,14 @@
 (add-to-list 'default-frame-alist '(width  . 192))
 (add-to-list 'default-frame-alist '(height . 91))
 
-(defun gkh/org-mode-visual()
-  (setq visual-fill-column-width 110
-        visual-fill-column-center-text nil
-        display-fill-column-indicator nil
-        display-line-numbers t)
-  (visual-fill-column-mode 1))
+;;(defun gkh/org-mode-visual()
+;;  (setq visual-fill-column-width 200
+;;        visual-fill-column-center-text nil
+;;        display-fill-column-indicator nil
+;;        display-line-numbers t)
+;;  (visual-fill-column-mode 1))
 
-(add-hook! 'org-mode-hook #'gkh/org-mode-visual)
+;;(add-hook! 'org-mode-hook #'gkh/org-mode-visual)
 
 (setq centaur-tabs-set-bar 'over
       centaur-tabs-height 38
@@ -153,4 +153,3 @@
 
 (after! magit
   (setq magit-diff-refine-hunk 'all))
-;; TODO Terminar de configurar con la siguiente: https://www.grszkth.fr/blog/doom-config/#style

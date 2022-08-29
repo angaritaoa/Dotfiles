@@ -25,9 +25,7 @@
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
        ;;(ivy +icons)      ; a search engine for love and life
-       (vertico
-        +childframe
-        +icons)            ; the search engine of the future
+       (vertico +icons)    ; the search engine of the future
 
        :ui
        ;;deft              ; notational velocity for Emacs
@@ -84,8 +82,7 @@
        vterm               ; the best terminal emulation in Emacs
 
        :checkers
-       (syntax
-        +childframe)       ; tasing you for every semicolon you forget
+       syntax              ; tasing you for every semicolon you forget
        ;;(spell +flyspell) ; tasing you for misspelling mispelling
        ;;grammar           ; tasing grammar mistake every you make
 

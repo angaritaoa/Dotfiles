@@ -51,5 +51,6 @@ make emacs
 
 - Gnome: configurar el entorno de escritorio gnome
 - NetworkManager: configurar IPv6 y la IP estatica 192.168.0.100
+- Tilix: configurar y cambiar el icono en /usr/share/applications/com.gexperts.Tilix.desktop con Icon=org.gnome.Console
 - Firefox: configurar WebGL, IPv6 y seguir la guia de [[https://wiki.archlinux.org/title/Firefox/Tweaks][ArchLinux]]
 - Chrome: configurar manualmente

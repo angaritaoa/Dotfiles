@@ -26,7 +26,7 @@ fedora:
 	sudo dnf autoremove --assumeyes zram-generator zram-generator-defaults
 	sudo dnf config-manager --set-enabled google-chrome
 	sudo dnf install --assumeyes curl wget git git-lfs coreutils tree p7zip p7zip-plugins gzip xz bzip2 lzo lz4 \
-		lzma drawing google-chrome-stable gnome-extensions-app gnome-tweaks dconf-editor gedit vim-X11 exa \
+		lzma drawing google-chrome-stable gnome-extensions-app gnome-tweaks dconf-editor gedit vim-X11 exa tilix \
 		terminator papirus-icon-theme meld sysprof pipewire-v4l2 v4l2loopback gwe gnome-shell-extension-just-perfection
 	sudo systemctl disable NetworkManager-wait-online.service
 	sudo cp -f ./fedora/xorg.conf /etc/X11/xorg.conf
@@ -52,7 +52,6 @@ gnome:
 	gsettings set org.gnome.desktop.interface font-rgba-order 'rgb'
 	gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 	gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'
-	gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 	gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono Light 9'
 	gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
 	gsettings set org.gnome.desktop.interface toolkit-accessibility false
@@ -78,6 +77,13 @@ gnome:
 	gsettings set org.gnome.nautilus.preferences default-folder-viewer 'icon-view'
 	gsettings set org.gnome.nautilus.preferences show-delete-permanently true
 	gsettings set org.gtk.Settings.FileChooser sort-directories-first true
+	gsettings set com.gexperts.Tilix.Settings control-scroll-zoom true
+	gsettings set com.gexperts.Tilix.Settings copy-on-select true
+	gsettings set com.gexperts.Tilix.Settings enable-wide-handle false
+	gsettings set com.gexperts.Tilix.Settings terminal-title-show-when-single true
+	gsettings set com.gexperts.Tilix.Settings terminal-title-style 'none'
+	gsettings set com.gexperts.Tilix.Settings theme-variant 'dark'
+	gsettings set com.gexperts.Tilix.Settings window-style 'disable-csd-hide-toolbar'
 
 .PHONY: dotfiles
 dotfiles:
@@ -86,12 +92,12 @@ dotfiles:
 	ln -fs $(shell pwd)/gitconfig ~/.gitconfig
 	ln -fs $(shell pwd)/config/terminator/config ~/.config/terminator/config
 	ln -fs $(shell pwd)/Xresources ~/.Xresources
+	cp -R ./config/tilix ~/.config
 	cp -fR ../.ssh ~/
 
 .PHONY: emacs
 emacs:
 	sudo dnf install -y emacs git ripgrep fd-find ShellCheck tidy sqlite cmake gcc make
-	mkdir -p ~/.org/roam
 	rm -rf ~/.emacs.d;
 	ln -fns $(shell pwd)/doom.d ~/.doom.d
 	git clone https://github.com/doomemacs/doomemacs ~/.emacs.d
