@@ -29,10 +29,16 @@
 ;; refresh your font settings. If Emacs still can't find your font, it likely
 ;; wasn't installed correctly. Font issues are rarely Doom issues!
 
-(setq doom-font (font-spec :family "JetBrains Mono" :height 16.25 :weight 'light)
+;;(setq doom-font (font-spec :family "JetBrains Mono" :height 16.25 :weight 'light)
+;;      doom-variable-pitch-font (font-spec :family "Segoe UI" :height 17.25 :weight 'regular)
+;;      doom-big-font (font-spec :family "JetBrains Mono" :height 16.25 :weight 'light)
+;;      doom-unicode-font (font-spec :family "JetBrains Mono" :height 16.25 :weight 'light)
+;;      doom-serif-font (font-spec :family "Segoe UI" :height 17.25 :weight 'regular))
+
+(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :height 16.25 :weight 'regular)
       doom-variable-pitch-font (font-spec :family "Segoe UI" :height 17.25 :weight 'regular)
-      doom-big-font (font-spec :family "JetBrains Mono" :height 16.25 :weight 'light)
-      doom-unicode-font (font-spec :family "JetBrains Mono" :height 16.25 :weight 'light)
+      doom-big-font (font-spec :family "JetBrainsMono Nerd Font" :height 16.25 :weight 'regular)
+      doom-unicode-font (font-spec :family "JetBrainsMono Nerd Font" :height 16.25 :weight 'regular)
       doom-serif-font (font-spec :family "Segoe UI" :height 17.25 :weight 'regular))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
@@ -135,8 +141,8 @@
                                           (?- . ?⦁))
         org-ellipsis " ⇲ "))
 
-(add-to-list 'default-frame-alist '(width  . 192))
-(add-to-list 'default-frame-alist '(height . 91))
+;;(add-to-list 'default-frame-alist '(width  . 192))
+;;(add-to-list 'default-frame-alist '(height . 91))
 
 ;;(defun gkh/org-mode-visual()
 ;;  (setq visual-fill-column-width 200
@@ -147,7 +153,8 @@
 
 ;;(add-hook! 'org-mode-hook #'gkh/org-mode-visual)
 
-(setq centaur-tabs-set-bar 'over
+(setq centaur-tabs-style "bar"
+      centaur-tabs-set-bar -1
       centaur-tabs-height 38
       centaur-tabs-modified-marker "●")
 

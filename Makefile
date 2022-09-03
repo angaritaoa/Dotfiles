@@ -27,7 +27,8 @@ fedora:
 	sudo dnf config-manager --set-enabled google-chrome
 	sudo dnf install --assumeyes curl wget git git-lfs coreutils tree p7zip p7zip-plugins gzip xz bzip2 lzo lz4 \
 		lzma drawing google-chrome-stable gnome-extensions-app gnome-tweaks dconf-editor gedit vim-X11 exa tilix \
-		terminator papirus-icon-theme meld sysprof pipewire-v4l2 v4l2loopback gwe gnome-shell-extension-just-perfection
+		terminator papirus-icon-theme meld sysprof pipewire-v4l2 v4l2loopback gwe gnome-shell-extension-just-perfection \
+		bspwm sxhkd picom polybar flameshot playerctl xbacklight
 	sudo systemctl disable NetworkManager-wait-online.service
 	sudo cp -f ./fedora/xorg.conf /etc/X11/xorg.conf
 	sudo grubby --update-kernel=ALL \
@@ -39,7 +40,7 @@ fedora:
 .PHONY: gnome
 gnome:
 	mkdir -p ~/.local/share/backgrounds
-	sudo cp -fR ./gnome/fonts/JetBrainsMono ./gnome/fonts/Windows /usr/share/fonts
+	sudo cp -fR ./gnome/fonts/JetBrainsMono ./gnome/fonts/JetBrainsMonoNerd ./gnome/fonts/Windows /usr/share/fonts
 	sudo cp -f ./gnome/fonts/local.conf /etc/fonts
 	cp -f ./gnome/backgrounds/* ~/.local/share/backgrounds
 	sudo fc-cache -f
@@ -84,6 +85,26 @@ gnome:
 	gsettings set com.gexperts.Tilix.Settings terminal-title-style 'none'
 	gsettings set com.gexperts.Tilix.Settings theme-variant 'dark'
 	gsettings set com.gexperts.Tilix.Settings window-style 'disable-csd-hide-toolbar'
+	gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/ background-color '#27272C2C3434'
+	gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/ background-transparency-percent 0
+	gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/ badge-color-set false
+	gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/ bold-color-set false
+	gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/ cursor-background-color '#5050AFAFEFEF'
+	gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/ cursor-blink-mode 'on'
+	gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/ cursor-colors-set false
+	gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/ cursor-foreground-color '#5050AFAFEFEF'
+	gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/ cursor-shape 'underline'
+	gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/ default-size-columns 180
+	gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/ default-size-rows 40
+	gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/ dim-transparency-percent 0
+	gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/ font 'JetBrainsMono Nerd Font 9'
+	gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/ foreground-color '#BBBBC2C2CFCF'
+	gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/ highlight-colors-set false
+	gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/ palette ['#1B1B22222929', '#FF6C6B', '#98BE65', '#DADA85854848', '#5050AFAFEFEF', '#C6C67878DDDD', '#4646D9D9FFFF', '#737379797E7E', '#1B1B22222929', '#FF6C6B', '#98BE65', '#DADA85854848', '#5050AFAFEFEF', '#C6C67878DDDD', '#46D9FF', '#737379797E7E']
+	gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/ terminal-bell 'none'
+	gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/ use-system-font false
+	gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/ use-theme-colors false
+	gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/ visible-name 'Predeterminado'
 
 .PHONY: dotfiles
 dotfiles:
@@ -93,6 +114,7 @@ dotfiles:
 	ln -fs $(shell pwd)/config/terminator/config ~/.config/terminator/config
 	ln -fs $(shell pwd)/Xresources ~/.Xresources
 	cp -R ./config/tilix ~/.config
+	cp -R ./config/flameshot ~/.config
 	cp -fR ../.ssh ~/
 
 .PHONY: emacs
@@ -102,3 +124,10 @@ emacs:
 	ln -fns $(shell pwd)/doom.d ~/.doom.d
 	git clone https://github.com/doomemacs/doomemacs ~/.emacs.d
 	~/.emacs.d/bin/doom install
+
+.PHONY: bspwm
+bspwm:
+	ln -fns $(shell pwd)/config/bspwm ~/.config/bspwm
+	ln -fns $(shell pwd)/config/sxhkd ~/.config/sxhkd
+	ln -fns $(shell pwd)/config/picom ~/.config/picom
+	ln -fns $(shell pwd)/config/polybar ~/.config/polybar

@@ -45,6 +45,7 @@ make fedora
 make gnome
 make dotfiles
 make emacs
+make bspwm
 #+end_src
 
 ** Configuraciones generales
