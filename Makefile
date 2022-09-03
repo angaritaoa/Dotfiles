@@ -116,6 +116,7 @@ dotfiles:
 	cp -R ./config/tilix ~/.config
 	cp -R ./config/flameshot ~/.config
 	cp -fR ../.ssh ~/
+	ssh-add ~/.ssh/id_github
 
 .PHONY: emacs
 emacs:
