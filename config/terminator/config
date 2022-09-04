@@ -1,18 +1,23 @@
 [global_config]
-  handle_size = 2
+  handle_size = 1
+  hide_on_lose_focus = True
   inactive_color_offset = 1.0
 [keybindings]
 [profiles]
   [[default]]
     icon_bell = False
-    background_color = "#282c34"
+    background_color = "#272c34"
     background_darkness = 0.98
     cursor_shape = underline
     cursor_color = "#51afef"
     cursor_color_fg = False
-    foreground_color = "#dfdfdf"
+    font = JetBrainsMono Nerd Font 9
+    foreground_color = "#bbc2cf"
     show_titlebar = False
-    palette = "#1b2229:#ff6c6b:#98be65:#ecbe7b:#51afef:#c678dd:#46d9ff:#dfdfdf:#1b2229:#ff6c6b:#98be65:#ecbe7b:#51afef:#c678dd:#46d9ff:#dfdfdf"
+    scrollbar_position = hidden
+    scrollback_lines = 1000
+    palette = "#1b2229:#ff6c6b:#98be65:#da8548:#50afef:#c678dd:#46d9ff:#73797e:#1b2229:#ff6c6b:#98be65:#da8548:#50afef:#c678dd:#46d9ff:#73797e"
+    use_system_font = False
     copy_on_selection = True
 [layouts]
   [[default]]
