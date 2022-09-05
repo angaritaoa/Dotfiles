@@ -110,13 +110,11 @@ gnome:
 
 .PHONY: dotfiles
 dotfiles:
-	[ -d ~/.config/terminator ] || mkdir -p ~/.config/terminator
 	ln -fs $(shell pwd)/bashrc ~/.bashrc
 	ln -fs $(shell pwd)/gitconfig ~/.gitconfig
-	ln -fs $(shell pwd)/config/terminator/config ~/.config/terminator/config
 	ln -fs $(shell pwd)/Xresources ~/.Xresources
-	cp -R ./config/tilix ~/.config
-	cp -R ./config/flameshot ~/.config
+	ln -fs $(shell pwd)/config/tilix ~/.config/tilix
+	ln -fs $(shell pwd)/config/flameshot ~/.config/flameshot
 	cp -fR ../.ssh ~/
 	ssh-add ~/.ssh/id_github
 
