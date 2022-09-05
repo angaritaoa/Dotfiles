@@ -12,29 +12,25 @@
 # #####################################################################################
 
 
-bspc monitor -d 1 2 3 4
+bspc monitor -d 1 2 3 4 5
 
-bspc config border_width        2
-bspc config window_gap          6
-bspc config top_padding         20
-bspc config left_padding        0
-bspc config right_padding       1
-bspc config bottom_padding      2
+bspc config border_width 1
+bspc config window_gap 12
 
-bspc config split_ratio         0.52
-bspc config borderless_monocle  true
-bspc config gapless_monocle     true
+bspc config split_ratio 0.52
+bspc config borderless_monocle true
+bspc config gapless_monocle true
 
-bspc config focused_border_color    "#50AFEF"
-bspc config presel_feedback_color   "#50AFEF"
+bspc config focused_border_color "#50AFEF"
+bspc config presel_feedback_color "#50AFEF"
 
-bspc rule -a Gimp       desktop='^8' state=floating follow=on
-bspc rule -a Chromium   desktop='^2'
-bspc rule -a mplayer2   state=floating
-bspc rule -a Kupfer.py  focus=on
-bspc rule -a Screenkey  manage=off
-bspc rule -a Emacs      state=tiled
-bspc rule -a nautilus   state=floating
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+bspc rule -a Emacs state=tiled
+bspc rule -a nautilus state=floating
 
 pkill sxhkd
 pkill polybar
@@ -42,5 +38,5 @@ pkill picom
 pkill nitrogen
 nitrogen --restore &
 picom &
-polybar top & disown
+polybar --reload statusbar &
 sxhkd &

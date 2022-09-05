@@ -16,10 +16,23 @@
 [ -f /etc/bashrc ] && . /etc/bashrc
 
 # #####################################################################################
+# Colores
+# #####################################################################################
+RESET=$(tput sgr0)
+BOLD=$(tput bold)
+BLACK=$(tput setaf 0)
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+BLUE=$(tput setaf 4)
+MAGENTA=$(tput setaf 5)
+CYAN=$(tput setaf 6)
+WHITE=$(tput setaf 15)
+
+# #####################################################################################
 # Variables de entorno generales
 # #####################################################################################
-#export TERM='xterm-direct'
-export PS1='\[\e[0;37m\][\[\e[1;34m\]\u\[\e[0;37m\]@\[\e[1;32m\]\h\[\e[0;37m\]] \[\e[0;32m\]\W\[\e[0;31m\]  \[\e[m\]'
+export PS1='${WHITE}[${BLUE}${BOLD}\u${RESET}${WHITE}@${GREEN}${BOLD}\h${RESET}${WHITE}] ${RED} \w${RESET}  '
 
 # #####################################################################################
 # Configuración de rutas de directorios para busqueda de binarios
