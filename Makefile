@@ -110,11 +110,11 @@ gnome:
 
 .PHONY: dotfiles
 dotfiles:
+	ln -fs $(shell pwd)/config/flameshot ~/.config/flameshot
 	ln -fs $(shell pwd)/bashrc ~/.bashrc
 	ln -fs $(shell pwd)/gitconfig ~/.gitconfig
 	ln -fs $(shell pwd)/Xresources ~/.Xresources
 	ln -fs $(shell pwd)/config/tilix ~/.config/tilix
-	ln -fs $(shell pwd)/config/flameshot ~/.config/flameshot
 	cp -fR ../.ssh ~/
 	ssh-add ~/.ssh/id_github
 
