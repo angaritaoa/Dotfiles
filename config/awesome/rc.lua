@@ -565,4 +565,5 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 awful.spawn.with_shell("pgrep -u $USER -x picom    > /dev/null || picom -b"             , false)
 awful.spawn.with_shell("pgrep -u $USER -x nitrogen > /dev/null || nitrogen --restore"   , false)
+awful.spawn.with_shell("emacs --daemon"                                                 , false)
 awful.spawn.with_shell("ssh-add ~/.ssh/id_github"                                       , false)
