@@ -1,6 +1,6 @@
 [fedora-modular]
 name=Fedora Modular $releasever - $basearch
-baseurl=http://fedora.mirror.constant.com/fedora/linux/releases/$releasever/Modular/$basearch/os/
+baseurl=https://forksystems.mm.fcix.net/fedora/linux/releases/$releasever/Modular/$basearch/os/
 enabled=1
 countme=1
 metadata_expire=7d

@@ -141,8 +141,8 @@
                                           (?- . ?⦁))
         org-ellipsis " ⇲ "))
 
-;;(add-to-list 'default-frame-alist '(width  . 192))
-;;(add-to-list 'default-frame-alist '(height . 91))
+(add-to-list 'default-frame-alist '(width  . 190))
+(add-to-list 'default-frame-alist '(height . 95))
 
 ;;(defun gkh/org-mode-visual()
 ;;  (setq visual-fill-column-width 200

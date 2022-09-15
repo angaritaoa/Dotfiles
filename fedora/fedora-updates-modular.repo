@@ -1,6 +1,6 @@
 [updates-modular]
 name=Fedora Modular $releasever - $basearch - Updates
-baseurl=http://fedora.mirror.constant.com/fedora/linux/updates/$releasever/Modular/$basearch/
+baseurl=https://forksystems.mm.fcix.net/fedora/linux/updates/$releasever/Modular/$basearch/
 enabled=1
 countme=1
 repo_gpgcheck=0

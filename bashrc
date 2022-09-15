@@ -32,7 +32,9 @@ WHITE=$(tput setaf 15)
 # #####################################################################################
 # Variables de entorno generales
 # #####################################################################################
-export PS1='${WHITE}[${BLUE}${BOLD}\u${RESET}${WHITE}@${GREEN}${BOLD}\h${RESET}${WHITE}] ${RED} \w${RESET}  '
+export PS1=' '
+export EDITOR="emacsclient -t -a ''"              # $EDITOR use Emacs in terminal
+export VISUAL="emacsclient -c -a emacs"           # $VISUAL use Emacs in GUI mode
 
 # #####################################################################################
 # Configuración de rutas de directorios para busqueda de binarios

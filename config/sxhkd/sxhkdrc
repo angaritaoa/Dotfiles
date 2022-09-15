@@ -12,55 +12,58 @@
 
 # Reload sxhkd
 super + Escape
-	  	pkill -USR1 -x sxhkd
+      pkill -USR1 -x sxhkd
 
 # Quit bspwm
 super + alt + q
-	  	bspc quit
+      bspc quit
 
 # Restart bspwm
+#super + alt + r
+#      bspc wm -r
+
+# Reboot
 super + alt + r
-	  	bspc wm -r
+      systemctl reboot
+
+# Poweroff
+super + alt + p
+      systemctl poweroff
 
 # Close application
 super + shift + w
-	  	bspc node -c
+      bspc node -c
 
-# Close and kill application
-#super + {_,shift + }w
-#	  	bspc node -{c,k}
+# Kill application
+super + alt + k
+      bspc node -k
 
 # Terminal
 super + Return
-	  	tilix
-
-# Editor
-super + e
-	  	emacs
-
-# Browser
-super + f
-	  	firefox
-
-# Browser
-super + g
-	  	google-chrome-stable
+      urxvt
 
 # Launcher
-super + @space
-	  	dmenu_run
+super + space
+      rofi -show combi
+
+# Color Picker
+alt + Print
+    gpick -o -s --no-newline | xclip -sel c
 
 # Screenshot
-@Print
-		flameshot gui
+Print
+    flameshot gui
+
+super + l
+      i3lock -fei /mnt/archivos/projects/dotfiles/gnome/backgrounds/i3lock.png
 
 # Preselect the direction
 super + ctrl + {Left,Down,Up,Right}
-	bspc node -p {west,south,north,east}
+      bspc node -p {west,south,north,east}
 
 # Cancel the preselection
 super + ctrl + space
-	bspc node -p cancel
+      bspc node -p cancel
 
 # Move/resize node
 super + alt + {Left,Down,Up,Right}
@@ -70,18 +73,18 @@ super + alt + {Left,Down,Up,Right}
 
 # Change desktop
 super + shift + {Left,Right}
-	bspc desktop -f {prev,next}.local
+      bspc desktop -f {prev,next}.local
 
 # Focus window
 super + {Left,Right,Down,Up}
-    bspc node -f {west,east,south,north}
+      bspc node -f {west,east,south,north}
 
 # Volume {up,down}
 XF86Audio{RaiseVolume,LowerVolume}
-	pactl set-sink-volume @DEFAULT_SINK@ {+5%,-5%}
+    pactl set-sink-volume @DEFAULT_SINK@ {+5%,-5%}
 
 XF86Audio{Prev,Next}
     playerctl {previous,next}
 
 XF86AudioPlay
-	playerctl play-pause
+    playerctl play-pause

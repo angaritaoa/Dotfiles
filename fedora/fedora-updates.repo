@@ -1,6 +1,6 @@
 [updates]
 name=Fedora $releasever - $basearch - Updates
-baseurl=http://fedora.mirror.constant.com/fedora/linux/updates/$releasever/Everything/$basearch/
+baseurl=https://forksystems.mm.fcix.net/fedora/linux/updates/$releasever/Everything/$basearch/
 enabled=1
 countme=1
 repo_gpgcheck=0
