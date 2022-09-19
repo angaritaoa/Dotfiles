@@ -42,8 +42,9 @@ archivos dotfiles:
 cd /mnt/archivos/projects/dotfiles
 make update
 make fedora
-make gnome
+make fonts
 make dotfiles
+make gnome
 make emacs
 #+end_src
 

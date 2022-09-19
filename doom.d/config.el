@@ -35,11 +35,11 @@
 ;;      doom-unicode-font (font-spec :family "JetBrains Mono" :height 16.25 :weight 'light)
 ;;      doom-serif-font (font-spec :family "Segoe UI" :height 17.25 :weight 'regular))
 
-(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :height 16.25 :weight 'regular)
-      doom-variable-pitch-font (font-spec :family "Segoe UI" :height 17.25 :weight 'regular)
-      doom-big-font (font-spec :family "JetBrainsMono Nerd Font" :height 16.25 :weight 'regular)
-      doom-unicode-font (font-spec :family "JetBrainsMono Nerd Font" :height 16.25 :weight 'regular)
-      doom-serif-font (font-spec :family "Segoe UI" :height 17.25 :weight 'regular))
+(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 15 :weight 'regular)
+      doom-variable-pitch-font (font-spec :family "Segoe UI" :size 16 :weight 'regular)
+      doom-big-font (font-spec :family "JetBrainsMono Nerd Font" :size 15 :weight 'regular)
+      doom-unicode-font (font-spec :family "JetBrainsMono Nerd Font" :size 15 :weight 'regular)
+      doom-serif-font (font-spec :family "Segoe UI" :size 16 :weight 'regular))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the

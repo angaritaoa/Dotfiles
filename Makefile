@@ -1,3 +1,5 @@
+uuid=$(shell gsettings get org.gnome.Terminal.ProfilesList default | tr -d \')
+
 .PHONY: update
 update:
 	sudo rm -f /etc/yum.repos.d/fedora.repo
@@ -24,7 +26,7 @@ fedora:
 		libva-vdpau-driver libva-utils libva-v4l2-request libvdpau-va-gl mesa-vdpau-drivers vulkan fedora-workstation-repositories \
 		curl wget git git-lfs coreutils tree p7zip p7zip-plugins gzip xz bzip2 lzo lz4 lzma google-chrome-stable gnome-tweaks \
 		dconf-editor gedit vim-X11 exa meld sysprof pipewire-v4l2 v4l2loopback gwe papirus-icon-theme picom flameshot playerctl \
-		xprop rofi xclip gpick awesome
+		xprop rofi xclip gpick awesome rxvt-unicode gnome-terminal
 	sudo dnf autoremove --assumeyes zram-generator zram-generator-defaults
 	sudo dnf config-manager --set-enabled google-chrome
 	sudo systemctl disable NetworkManager-wait-online.service
@@ -35,13 +37,30 @@ fedora:
 	sudo depmod -ae
 	sudo reboot
 
+.PHONY: fonts
+fonts:
+	sudo cp -fR ./assets/fonts/JetBrainsMono		/usr/share/fonts
+	sudo cp -fR ./assets/fonts/JetBrainsMonoNerd	/usr/share/fonts
+	sudo cp -fR ./assets/fonts/MaterialDesignIcons	/usr/share/fonts
+	sudo cp -fR ./assets/fonts/Windows				/usr/share/fonts
+	sudo fc-cache -r
+
+.PHONY: dotfiles
+dotfiles:
+	sudo ln -fns $(shell pwd)/local.conf /etc/fonts/local.conf
+	ln -fns $(shell pwd)/config/awesome ~/.config/awesome
+	ln -fns $(shell pwd)/config/picom ~/.config/picom
+	ln -fns $(shell pwd)/config/rofi ~/.config/rofi
+	ln -fns $(shell pwd)/config/flameshot ~/.config/flameshot
+	ln -fns $(shell pwd)/config/gtk-3.0 ~/.config/gtk-3.0
+	ln -fns $(shell pwd)/config/gtk-2.0/gtkrc-2.0 ~/.gtkrc-2.0
+	ln -fns $(shell pwd)/bashrc ~/.bashrc
+	ln -fns $(shell pwd)/gitconfig ~/.gitconfig
+	ln -fns $(shell pwd)/Xresources ~/.Xresources
+	ln -fns $(shell pwd)/../.ssh ~/.ssh
+
 .PHONY: gnome
 gnome:
-	sudo cp -fR ./gnome/fonts/JetBrainsMono /usr/share/fonts
-	sudo cp -fR ./gnome/fonts/JetBrainsMonoNerd /usr/share/fonts
-	sudo cp -fR ./gnome/fonts/MaterialDesignIcons /usr/share/fonts
-	sudo cp -fR ./gnome/fonts/Windows /usr/share/fonts
-	sudo fc-cache -f
 	gsettings set org.gnome.desktop.interface clock-format '12h'
 	gsettings set org.gnome.desktop.interface cursor-blink true
 	gsettings set org.gnome.desktop.interface document-font-name 'Segoe UI Regular 10'
@@ -55,7 +74,7 @@ gnome:
 	gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
 	gsettings set org.gnome.desktop.interface toolkit-accessibility false
 	gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Segoe UI Regular 10'
-	gsettings set org.gnome.desktop.wm.preferences button-layout 'appmenu:minimize,maximize,close'
+	gsettings set org.gnome.desktop.wm.preferences button-layout 'appmenu:close'
 	gsettings set org.gnome.desktop.interface enable-animations false
 	gsettings set org.gnome.desktop.interface clock-show-date true
 	gsettings set org.gnome.desktop.peripherals.mouse accel-profile 'flat'
@@ -76,18 +95,20 @@ gnome:
 	gsettings set org.gnome.nautilus.preferences default-folder-viewer 'icon-view'
 	gsettings set org.gnome.nautilus.preferences show-delete-permanently true
 	gsettings set org.gtk.Settings.FileChooser sort-directories-first true
-
-.PHONY: dotfiles
-dotfiles:
-	sudo ln -fns $(shell pwd)/gnome/fonts/local.conf /etc/fonts/local.conf
-	ln -fns $(shell pwd)/config/awesome ~/.config/awesome
-	ln -fns $(shell pwd)/config/picom ~/.config/picom
-	ln -fns $(shell pwd)/config/rofi ~/.config/rofi
-	ln -fns $(shell pwd)/config/flameshot ~/.config/flameshot
-	ln -fns $(shell pwd)/bashrc ~/.bashrc
-	ln -fns $(shell pwd)/gitconfig ~/.gitconfig
-	ln -fns $(shell pwd)/Xresources ~/.Xresources
-	ln -fns $(shell pwd)/../.ssh ~/.ssh
+	gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false
+	gsettings set org.gnome.Terminal.Legacy.Settings menu-accelerator-enabled false
+	gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${uuid}/ audible-bell false
+	gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${uuid}/ cursor-blink-mode 'on'
+	gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${uuid}/ cursor-shape 'underline'
+	gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${uuid}/ default-size-columns 132
+	gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${uuid}/ font 'JetBrainsMono Nerd Font 9'
+	gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${uuid}/ foreground-color '#BBC2CF'
+	gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${uuid}/ background-color '#21242B'
+	gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${uuid}/ palette "['#1B2229', '#FF6C6B', '#98BE65', '#DA8548', '#50AFEF', '#C678DD', '#46D9FF', '#5B6268', '#1B2229', '#FF6C6B', '#98BE65', '#DA8548', '#50AFEF', '#C678DD', '#46D9FF', '#5B6268']"
+	gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${uuid}/ scrollback-lines 10000
+	gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${uuid}/ use-system-font false
+	gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${uuid}/ use-theme-colors false
+	gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${uuid}/ visible-name 'Personal'
 
 .PHONY: emacs
 emacs:

@@ -45,10 +45,11 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+--beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/doom-one/doom-one-theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "xterm"
+terminal = "gnome-terminal"
 editor = os.getenv("EDITOR") or "vi"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -107,7 +108,12 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+--mytextclock = wibox.widget.textclock()
+mytextclock = wibox.widget {
+    format = "󰃰 %b %d, %Y  󰖉 %I:%M %p"
+    , font = "JetBrainsMono Nerd Font Bold 9"
+    , widget = wibox.widget.textclock
+}
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -164,12 +170,16 @@ end
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
+local new_shape = function(cr, width, height)
+    gears.shape.rounded_rect(cr, width, height, 8)
+end
+
 awful.screen.connect_for_each_screen(function(s)
     -- Wallpaper
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    awful.tag({ "1", "2", "3", "4" }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -185,7 +195,13 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytaglist = awful.widget.taglist {
         screen  = s,
         filter  = awful.widget.taglist.filter.all,
-        buttons = taglist_buttons
+        buttons = taglist_buttons,
+        style = {
+            font = "JetBrainsMono Nerd Font Bold 9"
+        }
+        --,layout   = {
+        --spacing = 2
+        --}
     }
 
     -- Create a tasklist widget
@@ -196,26 +212,52 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s })
+    --s.mywibox = awful.wibar({
+    --        --  stretch = true
+    --        --  position = "top"
+    --        --, x = 10
+    --        --, y = 10
+    --         width = 3820
+    --        , height = 40
+    --        , ontop = true
+    --        --, type = "normal"
+    --        , screen = mouse.screen
+    --        , x = 10
+    --        , y = 10
+    --        --, border_width = 2
+    --        , border_color = "#3F444A"
+    --        --, shape = new_shape
+    --        , bg = "#21242B"
+    --        --, bg = "#00000000"
+    --        , opacity = 0.95
+    --        , expand = true
+    --        , visible = true
+    --})
+
 
     -- Add widgets to the wibox
-    s.mywibox:setup {
-        layout = wibox.layout.align.horizontal,
-        { -- Left widgets
-            layout = wibox.layout.fixed.horizontal,
-            mylauncher,
-            s.mytaglist,
-            s.mypromptbox,
-        },
-        s.mytasklist, -- Middle widget
-        { -- Right widgets
-            layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
-            wibox.widget.systray(),
-            mytextclock,
-            s.mylayoutbox,
-        },
-    }
+    --s.mywibox:setup {
+    --    layout = wibox.layout.align.horizontal
+    --    , expand  = "none"
+    --    --{
+    --    --    margins = 10
+    --    --    ,layout = wibox.container.margin,
+    --    ,{ -- Left widgets
+    --        layout = wibox.layout.fixed.horizontal,
+    --        --mylauncher,
+    --        s.mytaglist,
+    --        s.mypromptbox,
+    --    },
+    --    --s.mytasklist, -- Middle widget
+    --    mytextclock,
+    --    { -- Right widgets
+    --        layout = wibox.layout.fixed.horizontal,
+    --        mykeyboardlayout,
+    --        wibox.widget.systray(),
+    --        --s.mylayoutbox,
+    --    }
+    --    --}
+    --}
 end)
 -- }}}
 
@@ -496,6 +538,17 @@ awful.rules.rules = {
     -- Set Firefox to always map on the tag named "2" on screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { screen = 1, tag = "2" } },
+    -- // Border filters
+    {
+        rule_any = {
+            instance = {
+                "polybar"
+            }
+        },
+        properties = {
+            border_width = 0
+        }
+    },
 }
 -- }}}
 
@@ -514,56 +567,29 @@ client.connect_signal("manage", function (c)
     end
 end)
 
--- Add a titlebar if titlebars_enabled is set to true in the rules.
-client.connect_signal("request::titlebars", function(c)
-    -- buttons for the titlebar
-    local buttons = gears.table.join(
-        awful.button({ }, 1, function()
-            c:emit_signal("request::activate", "titlebar", {raise = true})
-            awful.mouse.client.move(c)
-        end),
-        awful.button({ }, 3, function()
-            c:emit_signal("request::activate", "titlebar", {raise = true})
-            awful.mouse.client.resize(c)
-        end)
-    )
-
-    awful.titlebar(c) : setup {
-        { -- Left
-            awful.titlebar.widget.iconwidget(c),
-            buttons = buttons,
-            layout  = wibox.layout.fixed.horizontal
-        },
-        { -- Middle
-            { -- Title
-                align  = "center",
-                widget = awful.titlebar.widget.titlewidget(c)
-            },
-            buttons = buttons,
-            layout  = wibox.layout.flex.horizontal
-        },
-        { -- Right
-            awful.titlebar.widget.floatingbutton (c),
-            awful.titlebar.widget.maximizedbutton(c),
-            awful.titlebar.widget.stickybutton   (c),
-            awful.titlebar.widget.ontopbutton    (c),
-            awful.titlebar.widget.closebutton    (c),
-            layout = wibox.layout.fixed.horizontal()
-        },
-        layout = wibox.layout.align.horizontal
-    }
-end)
-
 -- Enable sloppy focus, so that focus follows mouse.
-client.connect_signal("mouse::enter", function(c)
-    c:emit_signal("request::activate", "mouse_enter", {raise = false})
-end)
+--client.connect_signal("mouse::enter", function(c)
+--    c:emit_signal("request::activate", "mouse_enter", {raise = false})
+--end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
-awful.spawn.with_shell("pgrep -u $USER -x picom    > /dev/null || picom -b"             , false)
-awful.spawn.with_shell("pgrep -u $USER -x nitrogen > /dev/null || nitrogen --restore"   , false)
-awful.spawn.with_shell("emacs --daemon"                                                 , false)
-awful.spawn.with_shell("ssh-add ~/.ssh/id_github"                                       , false)
+awful.spawn.with_shell("pgrep -u $USER -x picom   > /dev/null || picom -b"                      , false)
+awful.spawn.with_shell("pgrep -u $USER -x polybar > /dev/null || polybar --reload statusbar &"  , false)
+--awful.spawn.with_shell("pgrep -u $USER -x emacs   > /dev/null || emacs --daemon"                , false)
+awful.spawn.with_shell("ssh-add ~/.ssh/id_github"                                               , false)
+
+-- Tareas
+-- -- Youtube
+-- -- HotKeys
+-- -- StatusBar
+-- -- Windows
+-- -- rofi
+-- -- Gpick
+-- -- FlameShot
+-- -- i3lock
+-- -- systemctl
+-- -- nautilus
+-- -- spotify
