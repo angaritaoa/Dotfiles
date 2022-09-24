@@ -22,11 +22,11 @@ fedora:
 	sudo dnf groupupdate core --assumeyes
 	sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin --assumeyes
 	sudo dnf groupupdate sound-and-video --assumeyes
-	sudo dnf install --assumeyes akmod-nvidia xorg-x11-drv-nvidia-cuda xorg-x11-drv-nvidia-cuda-libs vdpauinfo \
+	sudo dnf install --assumeyes akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-cuda xorg-x11-drv-nvidia-cuda-libs vdpauinfo \
 		libva-vdpau-driver libva-utils libva-v4l2-request libvdpau-va-gl mesa-vdpau-drivers vulkan fedora-workstation-repositories \
 		curl wget git git-lfs coreutils tree p7zip p7zip-plugins gzip xz bzip2 lzo lz4 lzma google-chrome-stable gnome-tweaks \
-		dconf-editor gedit vim-X11 exa meld sysprof pipewire-v4l2 v4l2loopback gwe papirus-icon-theme picom flameshot playerctl \
-		xprop rofi xclip gpick awesome rxvt-unicode gnome-terminal
+		dconf-editor vim-X11 exa pipewire-v4l2 v4l2loopback gwe flameshot xprop xclip kvantum bismuth kcolorchooser flameshot \
+		thunderbird gimp inkscape
 	sudo dnf autoremove --assumeyes zram-generator zram-generator-defaults
 	sudo dnf config-manager --set-enabled google-chrome
 	sudo systemctl disable NetworkManager-wait-online.service
@@ -45,15 +45,12 @@ fonts:
 	sudo cp -fR ./assets/fonts/Windows				/usr/share/fonts
 	sudo fc-cache -r
 
-.PHONY: plasma
-plasma:
-
 .PHONY: dotfiles
 dotfiles:
 	sudo ln -fns $(shell pwd)/local.conf /etc/fonts/local.conf
-	ln -fns $(shell pwd)/config/awesome ~/.config/awesome
-	ln -fns $(shell pwd)/config/picom ~/.config/picom
-	ln -fns $(shell pwd)/config/rofi ~/.config/rofi
+#	ln -fns $(shell pwd)/config/awesome ~/.config/awesome
+#	ln -fns $(shell pwd)/config/picom ~/.config/picom
+#	ln -fns $(shell pwd)/config/rofi ~/.config/rofi
 	ln -fns $(shell pwd)/config/flameshot ~/.config/flameshot
 	ln -fns $(shell pwd)/config/gtk-3.0 ~/.config/gtk-3.0
 	ln -fns $(shell pwd)/config/gtk-2.0/gtkrc-2.0 ~/.gtkrc-2.0
