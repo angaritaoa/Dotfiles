@@ -45,6 +45,9 @@ fonts:
 	sudo cp -fR ./assets/fonts/Windows				/usr/share/fonts
 	sudo fc-cache -r
 
+.PHONY: plasma
+plasma:
+
 .PHONY: dotfiles
 dotfiles:
 	sudo ln -fns $(shell pwd)/local.conf /etc/fonts/local.conf
@@ -112,8 +115,11 @@ gnome:
 
 .PHONY: emacs
 emacs:
-	sudo dnf install -y emacs git ripgrep fd-find ShellCheck tidy sqlite libtool cmake gcc make
+	sudo dnf install -y emacs git ripgrep fd-find ShellCheck tidy sqlite libtool cmake gcc g++ clang make clang-tools-extra \
+		nodejs glslang
 	rm -rf ~/.emacs.d;
 	ln -fns $(shell pwd)/doom.d ~/.doom.d
 	git clone https://github.com/doomemacs/doomemacs ~/.emacs.d
 	~/.emacs.d/bin/doom install
+	~/.emacs.d/bin/doom sync
+	~/.emacs.d/bin/doom doctor
