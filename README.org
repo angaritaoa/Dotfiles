@@ -43,13 +43,15 @@ cd /mnt/archivos/projects/dotfiles
 make update
 make fedora
 make fonts
+make plasma
 make dotfiles
-make gnome
 make emacs
 #+end_src
 
 ** Configuraciones generales
 
+- Configurar nvidia-settings
+- =sudo vim /etc/environment __GL_SYNC_TO_VBLANK=0=
 - NetworkManager: configurar IPv6 y la IP estatica 192.168.0.100
 - Firefox: configurar WebGL, IPv6 y seguir la guia de [[https://wiki.archlinux.org/title/Firefox/Tweaks][ArchLinux]]
 - Chrome: configurar manualmente
