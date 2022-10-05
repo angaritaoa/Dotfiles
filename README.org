@@ -45,6 +45,7 @@ make fedora
 make fonts
 make plasma
 make dotfiles
+make themes
 make emacs
 #+end_src
 
