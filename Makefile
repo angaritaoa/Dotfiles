@@ -61,7 +61,6 @@ plasma:
 		libreoffice-pdfimport libreoffice-pyuno libreoffice-ure libreoffice-ure-common libreoffice-writer libreoffice-x11 libreoffice-xsltfilter \
 		libreoffice-nlpsolver inkscape ark kcalc kcharselect spectacle kwrite obs-studio vlc vlc-core vlc-extras kgpg kget ffmpeg gtk-murrine-engine \
 		gtk2-engines bash-completion hunspell-es-CO kffmpegthumbnailer gsettings-qt
-	sudo dnf --assumeyes groupupdate sound-and-video
 	sudo systemctl disable gdm
 	sudo systemctl enable sddm
 	sudo systemctl set-default graphical.target
