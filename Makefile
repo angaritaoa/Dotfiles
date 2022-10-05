@@ -83,6 +83,17 @@ dotfiles:
 	ln -fns $(shell pwd)/Xresources ~/.Xresources
 	ln -fns $(shell pwd)/../.ssh ~/.ssh
 
+.PHONY: themes
+themes:
+	cd ~/Descargas; ssh-add ~/.ssh/id_github
+	git clone git@github.com:vinceliuice/Layan-kde.git
+	git clone git@github.com:vinceliuice/Layan-gtk-theme.git
+	git clone git@github.com:vinceliuice/Tela-icon-theme.git
+	Layan-kde/install.sh
+	Layan-gtk-theme/install.sh
+	Tela-icon-theme/install.sh
+	rm -rf Layan-kde Layan-gtk-theme Tela-icon-theme
+
 .PHONY: emacs
 emacs:
 	sudo dnf install -y emacs git ripgrep fd-find ShellCheck tidy sqlite libtool cmake gcc g++ clang make clang-tools-extra \
