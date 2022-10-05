@@ -24,7 +24,7 @@ fedora:
 	sudo dnf install --assumeyes akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-cuda xorg-x11-drv-nvidia-cuda-libs vdpauinfo \
 		libva-vdpau-driver libva-utils libva-v4l2-request libvdpau-va-gl mesa-vdpau-drivers vulkan fedora-workstation-repositories \
 		opencl-utils mesa-libOpenCL fedora-workstation-repositories curl wget git git-lfs coreutils tree p7zip p7zip-plugins gzip \
-		xz bzip2 lzo lz4 lzma gnome-tweaks dconf-editor vim-X11 exa pipewire-v4l2 v4l2loopback gwe flameshot xprop xclip
+		xz bzip2 lzo lz4 lzma gnome-tweaks dconf-editor vim-X11 exa pipewire-v4l2 v4l2loopback gwe xprop xclip
 	sudo dnf autoremove --assumeyes zram-generator zram-generator-defaults
 	sudo dnf config-manager --set-enabled google-chrome
 	sudo systemctl disable NetworkManager-wait-online.service
@@ -73,7 +73,7 @@ dotfiles:
 #	ln -fns $(shell pwd)/config/awesome ~/.config/awesome
 #	ln -fns $(shell pwd)/config/picom ~/.config/picom
 #	ln -fns $(shell pwd)/config/rofi ~/.config/rofi
-	ln -fns $(shell pwd)/config/flameshot ~/.config/flameshot
+#	ln -fns $(shell pwd)/config/flameshot ~/.config/flameshot
 	ln -fns $(shell pwd)/config/gtk-3.0 ~/.config/gtk-3.0
 	ln -fns $(shell pwd)/config/gtk-2.0/gtkrc-2.0 ~/.gtkrc-2.0
 	ln -fns $(shell pwd)/bashrc ~/.bashrc
