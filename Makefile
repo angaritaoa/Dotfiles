@@ -21,10 +21,11 @@ fedora:
 	sudo dnf groupupdate core --assumeyes
 	sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin --assumeyes
 	sudo dnf groupupdate sound-and-video --assumeyes
-	sudo dnf install --assumeyes akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-cuda xorg-x11-drv-nvidia-cuda-libs vdpauinfo \
-		libva-vdpau-driver libva-utils libva-v4l2-request libvdpau-va-gl mesa-vdpau-drivers vulkan fedora-workstation-repositories \
-		opencl-utils mesa-libOpenCL fedora-workstation-repositories curl wget git git-lfs coreutils tree p7zip p7zip-plugins gzip \
-		xz bzip2 lzo lz4 lzma gnome-tweaks dconf-editor vim-X11 exa pipewire-v4l2 v4l2loopback gwe xprop xclip
+	sudo dnf install --assumeyes akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-cuda xorg-x11-drv-nvidia-cuda-libs \
+		vdpauinfo libva-vdpau-driver libva-utils libva-v4l2-request libvdpau-va-gl mesa-vdpau-drivers vulkan \
+		fedora-workstation-repositories opencl-utils mesa-libOpenCL fedora-workstation-repositories curl wget git git-lfs \
+		coreutils tree p7zip p7zip-plugins gzip xz bzip2 lzo lz4 lzma gnome-tweaks dconf-editor vim-X11 exa pipewire-v4l2 \
+		v4l2loopback gwe xprop xclip
 	sudo dnf autoremove --assumeyes zram-generator zram-generator-defaults
 	sudo dnf config-manager --set-enabled google-chrome
 	sudo systemctl disable NetworkManager-wait-online.service
@@ -46,21 +47,23 @@ fonts:
 
 .PHONY: plasma
 plasma:
-	sudo dnf install --assumeyes NetworkManager-config-connectivity-fedora breeze-gtk breeze-icon-theme colord-kde dolphin glibc-langpack-en \
-		glibc-langpack-es langpacks-core-en langpacks-core-es langpacks-core-font-en langpacks-core-font-es langpacks-en langpacks-es \
-		libreoffice-langpack-en libreoffice-langpack-es tesseract-langpack-eng gnome-keyring-pam kcm_systemd kde-gtk-config kde-partitionmanager \
-		kde-settings-pulseaudio kde-style-breeze kdeplasma-addons kdialog kdnssd kf5-akonadi-server kf5-akonadi-server-mysql kf5-baloo-file \
-		kf5-kipi-plugins khotkeys kmenuedit konsole5 kscreen kscreenlocker ksshaskpass ksysguard kwalletmanager5 kwebkitpart kwin pam-kwallet \
-		phonon-qt5-backend-gstreamer pinentry-qt plasma-breeze plasma-desktop plasma-desktop-doc plasma-drkonqi plasma-nm plasma-nm-l2tp \
+	sudo dnf install --assumeyes NetworkManager-config-connectivity-fedora breeze-gtk breeze-icon-theme colord-kde dolphin \
+		glibc-langpack-en glibc-langpack-es langpacks-core-en langpacks-core-es langpacks-core-font-en langpacks-core-font-es \
+		langpacks-en langpacks-es libreoffice-langpack-en libreoffice-langpack-es tesseract-langpack-eng gnome-keyring-pam \
+		kcm_systemd kde-gtk-config kde-partitionmanager kde-settings-pulseaudio kde-style-breeze kdeplasma-addons kdialog \
+		kdnssd kf5-akonadi-server kf5-akonadi-server-mysql kf5-baloo-file kf5-kipi-plugins khotkeys kmenuedit konsole5 \
+		kscreen kscreenlocker ksshaskpass ksysguard kwalletmanager5 kwebkitpart kwin pam-kwallet phonon-qt5-backend-gstreamer \
+		pinentry-qt plasma-breeze plasma-desktop plasma-desktop-doc plasma-drkonqi plasma-nm plasma-nm-l2tp \
 		plasma-nm-openconnect plasma-nm-openswan plasma-nm-openvpn plasma-nm-pptp plasma-nm-vpnc plasma-pa plasma-workspace \
 		plasma-workspace-geolocation polkit-kde qt5-qtbase-gui qt5-qtdeclarative sddm sddm-breeze sddm-kcm sni-qt xorg-x11-drv-libinput \
-		setroubleshoot @base-x @Fonts NetworkManager-wifi NetworkManager-wwan kf5-networkmanager-qt dhcp-client dnsmasq iptables-nft wpa_supplicant \
-		kde-l10n-es kvantum bismuth kcolorchooser kf5-krunner firefox thunderbird gwenview okular libreoffice-calc libreoffice-core libreoffice-data \
-		libreoffice-emailmerge libreoffice-filters libreoffice-graphicfilter libreoffice-gtk3 libreoffice-help-en libreoffice-help-es \
-		libreoffice-impress libreoffice-kf5 libreoffice-langpack-en libreoffice-langpack-es libreoffice-ogltrans libreoffice-opensymbol-fonts \
-		libreoffice-pdfimport libreoffice-pyuno libreoffice-ure libreoffice-ure-common libreoffice-writer libreoffice-x11 libreoffice-xsltfilter \
-		libreoffice-nlpsolver inkscape ark kcalc kcharselect spectacle kwrite obs-studio vlc vlc-core vlc-extras kgpg kget ffmpeg gtk-murrine-engine \
-		gtk2-engines bash-completion hunspell-es-CO kffmpegthumbnailer gsettings-qt
+		setroubleshoot @base-x @Fonts NetworkManager-wifi NetworkManager-wwan kf5-networkmanager-qt dhcp-client dnsmasq iptables-nft \
+		wpa_supplicant kde-l10n-es kvantum bismuth kcolorchooser kf5-krunner firefox thunderbird gwenview okular libreoffice-calc \
+		libreoffice-core libreoffice-data libreoffice-emailmerge libreoffice-filters libreoffice-graphicfilter libreoffice-gtk3 \
+		libreoffice-help-en libreoffice-help-es libreoffice-impress libreoffice-kf5 libreoffice-langpack-en libreoffice-langpack-es \
+		libreoffice-ogltrans libreoffice-opensymbol-fonts libreoffice-pdfimport libreoffice-pyuno libreoffice-ure libreoffice-ure-common \
+		libreoffice-writer libreoffice-x11 libreoffice-xsltfilter libreoffice-nlpsolver inkscape ark kcalc kcharselect spectacle kwrite \
+		obs-studio vlc vlc-core vlc-extras kgpg kget ffmpeg gtk-murrine-engine gtk2-engines bash-completion hunspell-es-CO \
+		kffmpegthumbnailer gsettings-qt
 	sudo systemctl disable gdm
 	sudo systemctl enable sddm
 	sudo systemctl set-default graphical.target
