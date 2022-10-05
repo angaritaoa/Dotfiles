@@ -49,6 +49,9 @@ make themes
 make emacs
 #+end_src
 
+** Generar initramfs con los modulos de nvidia
+- sudo dracut --hostonly --force --add-drivers "nvidia nvidia_modeset nvidia_uvm nvidia_drm"
+
 ** Configuraciones generales
 
 - Configurar nvidia-settings
