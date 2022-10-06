@@ -39,7 +39,6 @@ export VISUAL="emacsclient -c -a emacs"           # $VISUAL use Emacs in GUI mod
 # #####################################################################################
 # Configuración de rutas de directorios para busqueda de binarios
 # #####################################################################################
-[ -d ~/software/qmk ] && export PATH=~/software/qmk:$PATH
 [ -d ~/.emacs.d/bin ] && export PATH=~/.emacs.d/bin:$PATH
 [ -d ~/.local/bin   ] && export PATH=~/.local/bin:$PATH
 
@@ -50,7 +49,6 @@ export VISUAL="emacsclient -c -a emacs"           # $VISUAL use Emacs in GUI mod
 if [ -x "$(command -v vimx)" ]; then
    alias vim='vimx'
    alias vi='vimx'
-   export EDITOR='vimx'
 fi
 
 # #####################################################################################
