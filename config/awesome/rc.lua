@@ -572,7 +572,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 awful.spawn.with_shell("pgrep -u $USER -x picom   > /dev/null || picom &"                      , false)
 -- awful.spawn.with_shell("pgrep -u $USER -x polybar > /dev/null || polybar --reload statusbar &"  , false)
 -- awful.spawn.with_shell("pgrep -u $USER -x emacs   > /dev/null || emacs --daemon"                , false)
-awful.spawn.with_shell("ssh-add ~/.ssh/id_github"                                               , false)
+awful.spawn.with_shell("ssh-add ~/.ssh/id_github"                                              , false)
 
 -- Tareas
 -- -- Youtube

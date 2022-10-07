@@ -50,12 +50,10 @@ make emacs
 #+end_src
 
 ** Generar initramfs con los modulos de nvidia
-- sudo dracut --hostonly --force --add-drivers "nvidia nvidia_modeset nvidia_uvm nvidia_drm"
+- =sudo dracut --hostonly --force --add-drivers "nvidia nvidia_modeset nvidia_uvm nvidia_drm"=
 
 ** Configuraciones generales
-
-- Configurar nvidia-settings
-- =sudo vim /etc/environment __GL_SYNC_TO_VBLANK=0=
+- Configurar nvidia-settings. Desactivar vsync, etc...
 - NetworkManager: configurar IPv6 y la IP estatica 192.168.0.100
 - Firefox: configurar WebGL, IPv6 y seguir la guia de [[https://wiki.archlinux.org/title/Firefox/Tweaks][ArchLinux]]
 - Chrome: configurar manualmente

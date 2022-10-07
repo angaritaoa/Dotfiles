@@ -30,6 +30,8 @@ fedora:
 	sudo dnf config-manager --set-enabled google-chrome
 	sudo systemctl disable NetworkManager-wait-online.service
 	sudo ln -fns $(shell pwd)/fedora/xorg.conf /etc/X11/xorg.conf
+	echo 'QT_STYLE_OVERRIDE=kvantum' | sudo tee -a /etc/environment
+	echo '__GL_SYNC_TO_VBLANK=0' | sudo tee -a /etc/environment
 	sudo grubby --update-kernel=ALL \
 		--args="rd.driver.blacklist=nouveau modprobe.blacklist=nouveau nvidia-drm.modeset=1 ipv6.disable=1 intel_iommu=on rhgb quiet"
 	sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
@@ -69,13 +71,16 @@ plasma:
 	sudo systemctl set-default graphical.target
 	sudo reboot
 
+.PHONY: awesome
+awesome:
+	ln -fns $(shell pwd)/config/awesome ~/.config/awesome
+	ln -fns $(shell pwd)/config/picom ~/.config/picom
+	ln -fns $(shell pwd)/config/rofi ~/.config/rofi
+	ln -fns $(shell pwd)/config/flameshot ~/.config/flameshot
+
 .PHONY: dotfiles
 dotfiles:
 	sudo ln -fns $(shell pwd)/local.conf /etc/fonts/local.conf
-#	ln -fns $(shell pwd)/config/awesome ~/.config/awesome
-#	ln -fns $(shell pwd)/config/picom ~/.config/picom
-#	ln -fns $(shell pwd)/config/rofi ~/.config/rofi
-#	ln -fns $(shell pwd)/config/flameshot ~/.config/flameshot
 	ln -fns $(shell pwd)/config/gtk-3.0 ~/.config/gtk-3.0
 	ln -fns $(shell pwd)/config/gtk-2.0/gtkrc-2.0 ~/.gtkrc-2.0
 	ln -fns $(shell pwd)/bashrc ~/.bashrc
