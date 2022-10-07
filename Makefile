@@ -90,7 +90,7 @@ dotfiles:
 
 .PHONY: themes
 themes:
-	cd ~/Descargas; ssh-add ~/.ssh/id_github
+	cd ~/Descargas; ssh-add ~/.ssh/id_ed25519
 	git clone git@github.com:vinceliuice/Layan-kde.git
 	git clone git@github.com:vinceliuice/Layan-gtk-theme.git
 	git clone git@github.com:vinceliuice/Tela-icon-theme.git
