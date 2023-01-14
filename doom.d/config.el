@@ -131,8 +131,8 @@
   (set-face-attribute 'org-level-7 nil        :height 1.0 :weight 'bold)
   (setq org-startup-folded nil
         org-startup-indented t
-        org-pretty-entities t
-        org-hide-emphasis-markers t
+        ;;org-pretty-entities t
+        ;;org-hide-emphasis-markers t
         org-startup-with-inline-images t
         org-image-actual-width '(500)
         org-superstar-headline-bullets-list '("●")

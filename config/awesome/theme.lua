@@ -11,7 +11,8 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "Segoe UI 10"
+theme.font          = "Segoe UI Regular 10"
+theme.taglist_font  = "JetBrainsMono Nerd Font Regular 10"
 
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#535d6c"
@@ -24,8 +25,8 @@ theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 
-theme.useless_gap   = dpi(5)
-theme.border_width  = dpi(1)
+theme.useless_gap   = dpi(7)
+theme.border_width  = dpi(0)
 theme.border_normal = "#3F444A"
 theme.border_focus  = "#3F444A"
 theme.border_marked = "#91231c"
@@ -98,7 +99,7 @@ theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/m
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
 --theme.wallpaper = themes_path.."default/background.png"
-theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/themes/doom-one/doom-one-bg.jpg"
+theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/bg.jpg"
 --gears.wallpaper.maximized(gears.filesystem.get_configuration_dir() .. "/wallpaper/mirage.png")
 
 -- You can use your own layout icons like this:
@@ -129,5 +130,3 @@ theme.awesome_icon = theme_assets.awesome_icon(
 theme.icon_theme = nil
 
 return theme
-
--- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80
