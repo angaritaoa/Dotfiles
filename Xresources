@@ -5,12 +5,12 @@ Xft.autohint:  false
 Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault
 Xft.rgba:      rgb
-Xcursor.theme: Breeze_Snow
+Xcursor.theme: Adwaita
 Xcursor.size:  24
 
 URxvt.internalBorder: 8
 URxvt.scrollBar: false
-URxvt.font: xft:JetBrainsMono Nerd Font:size=9
+URxvt.font: xft:JetBrains Mono:size=9
 URxvt.letterSpace: -1
 URxvt*depth: 32
 URxvt.cursorBlink: true

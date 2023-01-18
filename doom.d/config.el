@@ -160,3 +160,7 @@
 
 (after! magit
   (setq magit-diff-refine-hunk 'all))
+
+(setq lsp-dart-sdk-dir "~/.flutter/bin/cache/dart-sdk")
+(setq lsp-dart-flutter-sdk "~/.flutter")
+(setq flutter-sdk-path "~/.flutter")

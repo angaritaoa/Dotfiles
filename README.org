@@ -43,7 +43,7 @@ cd /mnt/archivos/projects/dotfiles
 make update
 make fedora
 make fonts
-make plasma
+make gnome
 make dotfiles
 make themes
 make emacs
@@ -53,7 +53,8 @@ make emacs
 - =sudo dracut --hostonly --force --add-drivers "nvidia nvidia_modeset nvidia_uvm nvidia_drm"=
 
 ** Configuraciones generales
-- Configurar nvidia-settings. Desactivar vsync, etc...
 - NetworkManager: configurar IPv6 y la IP estatica 192.168.0.100
 - Firefox: configurar WebGL, IPv6 y seguir la guia de [[https://wiki.archlinux.org/title/Firefox/Tweaks][ArchLinux]]
 - Chrome: configurar manualmente
+- LibreOffice: configurar OpenCL
+- Gnome: configurar gnome control center

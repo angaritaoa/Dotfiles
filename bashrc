@@ -41,6 +41,7 @@ export VISUAL="emacsclient -c -a emacs"           # $VISUAL use Emacs in GUI mod
 # #####################################################################################
 [ -d ~/.emacs.d/bin ] && export PATH=~/.emacs.d/bin:$PATH
 [ -d ~/.local/bin   ] && export PATH=~/.local/bin:$PATH
+[ -d ~/.flutter/bin ] && export PATH=~/.flutter/bin:$PATH
 
 # #####################################################################################
 # Para acceder al portapapeles del sistema operativo
