@@ -58,3 +58,4 @@ make emacs
 - Chrome: configurar manualmente
 - LibreOffice: configurar OpenCL
 - Gnome: configurar gnome control center
+- Flameshot: configurar el comando: flameshot gui
