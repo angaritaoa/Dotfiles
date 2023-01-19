@@ -1,6 +1,6 @@
 UUID=$(shell gsettings get com.gexperts.Tilix.ProfilesList default | tr -d \')
 PWD=$(shell pwd)
-
+# Jaider
 .PHONY: update
 update:
 	sudo rm -f /etc/yum.repos.d/fedora-updates-modular.repo
