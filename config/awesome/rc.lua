@@ -73,7 +73,7 @@ local myawesomemenu = {
 -- mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu, beautiful.awesome_icon },
 mymainmenu = awful.menu({ items = { { "Awesome", myawesomemenu,  },
                                     { "Firefox", function () awful.spawn("firefox") end },
-                                    { "Konsole", function () awful.spawn("konsole") end }
+                                    { "Konsole", function () awful.spawn("tilix") end }
                                   }
                         })
 

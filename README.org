@@ -35,15 +35,15 @@ sudo systemctl daemon-reload
 
 ** Ejecutar configuraciones
 
+Adicionar en ~/etc/default/grub~ los parámetros:
+rd.driver.blacklist=nouveau modprobe.blacklist=nouveau nvidia-drm.modeset=1 ipv6.disable=1 intel_iommu=on
+
 Ejecutar  los siguientes  comandos para  actualizar, configurar  e instalar  los
 archivos dotfiles:
 
 #+begin_src shell
 cd /mnt/archivos/projects/dotfiles
-make update
-make fedora
-make fonts
-make gnome
+make debian
 make dotfiles
 make themes
 make emacs
@@ -54,8 +54,8 @@ make emacs
 
 ** Configuraciones generales
 - NetworkManager: configurar IPv6 y la IP estatica 192.168.0.100
+- Plasma: configurar las preferencias
 - Firefox: configurar WebGL, IPv6 y seguir la guia de [[https://wiki.archlinux.org/title/Firefox/Tweaks][ArchLinux]]
 - Chrome: configurar manualmente
 - LibreOffice: configurar OpenCL
-- Gnome: configurar gnome control center
 - Flameshot: configurar el comando: flameshot gui
