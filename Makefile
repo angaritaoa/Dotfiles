@@ -9,12 +9,13 @@ debian:
 	sudo aptitude install nvidia-driver firmware-misc-nonfree nvidia-cuda-dev nvidia-cuda-toolkit vdpauinfo mesa-vdpau-drivers \
 		vdpau-driver-all nvidia-vaapi-driver mesa-utils pipewire-v4l2 v4l2loopback-dkms v4l2loopback-utils curl wget git git-lfs \
 		tree p7zip-full xz-utils zip unzip gzip bzip2 bzip3 7zip lzma exa xclip inkscape vlc vlc-plugin-pipewire pipewire-alsa \
-		pipewire-audio pipewire-jack pipewire-libcamera hunspell hunspell-es hunspell-dictionary-es flameshot piper pavucontrol-qt \
-		qt5-style-kvantum qt5-style-kvantum-l10n qt5-style-kvantum-themes firmware-atheros vim
+		pipewire-audio pipewire-jack pipewire-libcamera flameshot piper pavucontrol-qt qt5-style-kvantum qt5-style-kvantum-l10n \
+		qt5-style-kvantum-themes firmware-atheros vim awesome awesome-extra picom
 	sudo cp -f ${PWD}/10-xorg.conf /etc/X11/xorg.conf.d
 	sudo cp -f ${PWD}/environment /etc
-	sudo cp -f ${PWD}/local.conf /etc/fonts/local.conf
+	sudo cp -f ${PWD}/local.conf /etc/fonts
 	sudo cp -f ${PWD}/Xresources /etc/X11/Xresources
+	sudo cp -f ${PWD}/apt.conf /etc/apt
 	sudo cp -fR ./assets/fonts/JetBrainsMono /usr/share/fonts
 	sudo cp -fR ./assets/fonts/JetBrainsMonoNerd /usr/share/fonts
 	sudo cp -fR ./assets/fonts/Windows /usr/share/fonts
