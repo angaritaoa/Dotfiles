@@ -23,6 +23,15 @@ Ejecuta la regla ~macos~ para instalar los paquetes generales desde Homebrew:
 make macos
 #+end_src
 
+*** Instalar los archivos dotfiles
+
+Ejecutar la regla ~dotfiles~ para instalar los archivos de configuración en sus
+respectivas rutas. Normalmente se crearan enlaces simbólicos.
+
+#+begin_src shell
+make dotfiles
+#+end_src
+
 *** Instalar emacs
 
 Ejecutar la regla ~emacs~ para instalar Emacs y el marco de configuración Doom
@@ -31,3 +40,7 @@ Emacs:
 #+begin_src shell
 make emacs
 #+end_src
+
+*** Importar el perfil en la terminal
+
+Importar el perfil ~OneDark.terminal~ en la Terminal de MacOS.

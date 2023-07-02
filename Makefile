@@ -15,10 +15,8 @@ macos:
 
 .PHONY: dotfiles
 dotfiles:
-	ln -fns ${PWD}/config/flameshot ~/.config/flameshot
-#	ln -fns ${PWD}/bashrc ~/.bashrc
+	ln -fns ${PWD}/zshrc ~/.zshrc
 	ln -fns ${PWD}/gitconfig ~/.gitconfig
-	ln -fns ${PWD}/../.ssh ~/.ssh
 
 .PHONY: emacs
 emacs:
