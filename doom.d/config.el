@@ -7,7 +7,7 @@
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
 (setq user-full-name "Andres Angarita"
-      user-mail-address "angaritaoa@gmail.com")
+      user-mail-address "afao@icloud.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -29,17 +29,11 @@
 ;; refresh your font settings. If Emacs still can't find your font, it likely
 ;; wasn't installed correctly. Font issues are rarely Doom issues!
 
-;;(setq doom-font (font-spec :family "JetBrains Mono" :height 16.25 :weight 'light)
-;;      doom-variable-pitch-font (font-spec :family "Segoe UI" :height 17.25 :weight 'regular)
-;;      doom-big-font (font-spec :family "JetBrains Mono" :height 16.25 :weight 'light)
-;;      doom-unicode-font (font-spec :family "JetBrains Mono" :height 16.25 :weight 'light)
-;;      doom-serif-font (font-spec :family "Segoe UI" :height 17.25 :weight 'regular))
-
-(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 15 :weight 'regular)
-      doom-variable-pitch-font (font-spec :family "Segoe UI" :size 16 :weight 'regular)
-      doom-big-font (font-spec :family "JetBrainsMono Nerd Font" :size 15 :weight 'regular)
-      doom-unicode-font (font-spec :family "JetBrainsMono Nerd Font" :size 15 :weight 'regular)
-      doom-serif-font (font-spec :family "Segoe UI" :size 16 :weight 'regular))
+(setq doom-font (font-spec :family "JetBrains Mono" :size 12 :weight 'Light)
+;;      doom-variable-pitch-font (font-spec :family "Segoe UI" :size 16 :weight 'regular)
+      doom-big-font (font-spec :family "JetBrains Mono" :size 12 :weight 'Light)
+      doom-unicode-font (font-spec :family "JetBrains Mono" :size 12 :weight 'Light))
+;;      doom-serif-font (font-spec :family "Segoe UI" :size 16 :weight 'regular))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -52,8 +46,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-;;(setq org-directory "/mnt/archivos/projects/notas/org/"
-;;      org-roam-directory (concat org-directory "roam"))
+;;(setq org-directory "~/org/")
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -90,9 +83,9 @@
 
 (blink-cursor-mode 1)
 
-(setq evil-normal-state-cursor '(hollow "#98be65")
+(setq evil-normal-state-cursor '(hollow "#51afef")
       evil-insert-state-cursor '(bar    "#51afef")
-      evil-visual-state-cursor '(hollow "#98be65"))
+      evil-visual-state-cursor '(hollow "#51afef"))
 
 (map! :leader
       :desc "Toggle cursor here" :nv "i c" #'+multiple-cursors/evil-mc-toggle-cursor-here
@@ -101,15 +94,15 @@
        :desc "Jump word"   :n "c" #'evil-avy-goto-char-timer
        :desc "Jump window" :n "w" #'switch-window))
 
-(setq projectile-project-search-path '("/mnt/archivos/projects" "/mnt/archivos/projects/bam")
-      blink-cursor-blinks 0
-      doom-themes-enable-bold t
-      doom-themes-enable-italic t
-      doom-themes-treemacs-theme "doom-atom"
-      doom-themes-treemacs-enable-variable-pitch nil
-      treemacs-width 50
-      +zen-text-scale nil
-      +zen-mixed-pitch-modes nil)
+;;(setq projectile-project-search-path '("/mnt/archivos/projects" "/mnt/archivos/projects/bam")
+;;      blink-cursor-blinks 0
+;;      doom-themes-enable-bold t
+;;      doom-themes-enable-italic t
+;;      doom-themes-treemacs-theme "doom-atom"
+;;      doom-themes-treemacs-enable-variable-pitch nil
+;;      treemacs-width 50
+;;      +zen-text-scale nil
+;;      +zen-mixed-pitch-modes nil)
 
 ;;(setq-default x-stretch-cursor t)
 
@@ -122,17 +115,18 @@
         :n "M-j" #'org-metadown
         :n "M-k" #'org-metaup)
   (set-face-attribute 'org-document-title nil :height 1.0 :weight 'bold)
-  (set-face-attribute 'org-level-1 nil        :height 1.0 :weight 'bold)
-  (set-face-attribute 'org-level-2 nil        :height 1.0 :weight 'bold)
-  (set-face-attribute 'org-level-3 nil        :height 1.0 :weight 'bold)
+  (set-face-attribute 'org-level-1 nil        :height 2.5 :weight 'bold)
+  (set-face-attribute 'org-level-2 nil        :height 1.8 :weight 'bold)
+  (set-face-attribute 'org-level-3 nil        :height 1.2 :weight 'bold)
   (set-face-attribute 'org-level-4 nil        :height 1.0 :weight 'bold)
   (set-face-attribute 'org-level-5 nil        :height 1.0 :weight 'bold)
   (set-face-attribute 'org-level-6 nil        :height 1.0 :weight 'bold)
   (set-face-attribute 'org-level-7 nil        :height 1.0 :weight 'bold)
   (setq org-startup-folded nil
         org-startup-indented t
-        ;;org-pretty-entities t
-        ;;org-hide-emphasis-markers t
+        org-adapt-indentation t
+        org-pretty-entities t
+        org-hide-emphasis-markers t
         org-startup-with-inline-images t
         org-image-actual-width '(500)
         org-superstar-headline-bullets-list '("●")
@@ -142,7 +136,7 @@
         org-ellipsis " ⇲ "))
 
 (add-to-list 'default-frame-alist '(width  . 190))
-(add-to-list 'default-frame-alist '(height . 95))
+(add-to-list 'default-frame-alist '(height . 88))
 
 ;;(defun gkh/org-mode-visual()
 ;;  (setq visual-fill-column-width 200

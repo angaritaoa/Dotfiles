@@ -1,61 +1,33 @@
 #+title: Mi repositorio de archivos dotfiles
+#+author: Andres Angarita
 
-* Install
+* Dotfiles
 
-** Clonar el repositorio
+** Instalación
+
+*** Instalar Homebrew
+
+Ejecuta la regla ~brew~ para instalar Homebrew. El script de instalación explica
+paso a paso lo que va a realizar y se toma una pausa para confirmar antes de
+empezar:
 
 #+begin_src shell
-mkdir -p /mnt/archivos/projects; cd /mnt/archivos/projects;
-git clone git@github.com:angaritaoa/dotfiles.git
+make brew
 #+end_src
 
-** Configurar el archivo fstab
+*** Instalar paquetes
 
-El siguiente fragmento es un ejemplo de configuración del archivo ~fstab~:
+Ejecuta la regla ~macos~ para instalar los paquetes generales desde Homebrew:
 
 #+begin_src shell
-UUID=fc30ec4b-eec0-4ba4-a727-847981d2d17c   /               xfs     defaults,noatime            0 0
-UUID=14e3d31e-331c-4ec0-a0a8-178a7901b284   /boot           ext4    defaults,noatime            1 2
-UUID=7E4C-5C92                              /boot/efi       vfat    umask=0077,shortname=winnt  0 2
-UUID=9dd10a3e-0aec-4ac2-9340-dfb9995f9562   /mnt/archivos   xfs     defaults,noatime            0 0
+make macos
 #+end_src
 
-Editar el archivo ~fstab~:
+*** Instalar emacs
+
+Ejecutar la regla ~emacs~ para instalar Emacs y el marco de configuración Doom
+Emacs:
 
 #+begin_src shell
-sudo nano /etc/fstab
-#+end_src
-
-Después  de  editar el  archivo  ~fstab~,  ejecutar =systemctl  daemon-reload=  para
-actualizar unidades de systemd generadas a partir de este archivo:
-
-#+begin_src shell
-sudo systemctl daemon-reload
-#+end_src
-
-** Ejecutar configuraciones
-
-Adicionar en ~/etc/default/grub~ los parámetros:
-rd.driver.blacklist=nouveau modprobe.blacklist=nouveau nvidia-drm.modeset=1 ipv6.disable=1 intel_iommu=on
-
-Ejecutar  los siguientes  comandos para  actualizar, configurar  e instalar  los
-archivos dotfiles:
-
-#+begin_src shell
-cd /mnt/archivos/projects/dotfiles
-make debian
-make dotfiles
-make themes
 make emacs
 #+end_src
-
-** Generar initramfs con los modulos de nvidia
-- =sudo dracut --hostonly --force --add-drivers "nvidia nvidia_modeset nvidia_uvm nvidia_drm"=
-
-** Configuraciones generales
-- NetworkManager: configurar IPv6 y la IP estatica 192.168.0.100
-- Plasma: configurar las preferencias
-- Firefox: configurar WebGL, IPv6 y seguir la guia de [[https://wiki.archlinux.org/title/Firefox/Tweaks][ArchLinux]]
-- Chrome: configurar manualmente
-- LibreOffice: configurar OpenCL
-- Flameshot: configurar el comando: flameshot gui
