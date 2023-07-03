@@ -11,7 +11,7 @@ macos:
 	brew upgrade
 	brew install tree p7zip xz gzip exa vlc ripgrep grep exa zstd fd sqlite hub gpg2 coreutils \
 		gnu-tar direnv libtool git-delta universal-ctags shellcheck aspell languagetool \
-		clang-format google-java-format
+		clang-format google-java-format pandoc
 
 .PHONY: dotfiles
 dotfiles:

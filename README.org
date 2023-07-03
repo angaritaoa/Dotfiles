@@ -1,6 +1,16 @@
 #+title: Mi repositorio de archivos dotfiles
 #+author: Andres Angarita
 
+* Aplicaciones
+- TickTick
+- Craft
+- Moom
+- Emacs
+- Shottr
+- MacMouseFix
+- AppCleaner
+- DeepL
+
 * Dotfiles
 
 ** Instalación

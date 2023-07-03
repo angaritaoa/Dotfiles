@@ -115,9 +115,9 @@
         :n "M-j" #'org-metadown
         :n "M-k" #'org-metaup)
   (set-face-attribute 'org-document-title nil :height 1.0 :weight 'bold)
-  (set-face-attribute 'org-level-1 nil        :height 2.5 :weight 'bold)
-  (set-face-attribute 'org-level-2 nil        :height 1.8 :weight 'bold)
-  (set-face-attribute 'org-level-3 nil        :height 1.2 :weight 'bold)
+  (set-face-attribute 'org-level-1 nil        :height 1.0 :weight 'bold)
+  (set-face-attribute 'org-level-2 nil        :height 1.0 :weight 'bold)
+  (set-face-attribute 'org-level-3 nil        :height 1.0 :weight 'bold)
   (set-face-attribute 'org-level-4 nil        :height 1.0 :weight 'bold)
   (set-face-attribute 'org-level-5 nil        :height 1.0 :weight 'bold)
   (set-face-attribute 'org-level-6 nil        :height 1.0 :weight 'bold)
