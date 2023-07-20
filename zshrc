@@ -61,10 +61,11 @@ alias src='source ~/.zshrc'
 # Cambiando ls por exa. Instalar el paquete: $ sudo dnf install exa
 # #####################################################################################
 if [[ -x "$(command -v exa)" ]]; then
-   alias ls='exa -l   --sort=modified --time-style=long-iso --color=always --group-directories-first'
-   alias ll='exa -l   --sort=size     --time-style=long-iso --color=always --group-directories-first'
-   alias la='exa -la  --sort=modified --time-style=long-iso --color=always --group-directories-first'
-   alias lt='exa -lT  --sort=name     --time-style=long-iso --color=always --group-directories-first'
+   alias lc='exa -lU  --sort=created  --time-style=long-iso --color=always --group-directories-first'
+   alias lm='exa -lm  --sort=modified --time-style=long-iso --color=always --group-directories-first'
+   alias ls='exa -lm  --sort=size     --time-style=long-iso --color=always --group-directories-first'
+   alias la='exa -lma --sort=modified --time-style=long-iso --color=always --group-directories-first'
+   alias lt='exa -lmT --sort=name     --time-style=long-iso --color=always --group-directories-first'
 fi
 
 #alias ls='ls -ltrh  --color=always --group-directories-first'

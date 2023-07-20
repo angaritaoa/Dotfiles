@@ -30,10 +30,11 @@
 ;; wasn't installed correctly. Font issues are rarely Doom issues!
 
 (setq doom-font (font-spec :family "JetBrains Mono" :size 12 :weight 'Light)
-;;      doom-variable-pitch-font (font-spec :family "Segoe UI" :size 16 :weight 'regular)
+;;(setq doom-font (font-spec :family "JetBrains Mono" :size 12 :weight 'Regular)
+;;      doom-variable-pitch-font (font-spec :family "Segoe UI" :size 16 :weight 'Regular)
       doom-big-font (font-spec :family "JetBrains Mono" :size 12 :weight 'Light)
       doom-unicode-font (font-spec :family "JetBrains Mono" :size 12 :weight 'Light))
-;;      doom-serif-font (font-spec :family "Segoe UI" :size 16 :weight 'regular))
+;;      doom-serif-font (font-spec :family "Segoe UI" :size 16 :weight 'Regular))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -115,14 +116,14 @@
         :n "M-j" #'org-metadown
         :n "M-k" #'org-metaup)
   (set-face-attribute 'org-document-title nil :height 1.0 :weight 'bold)
-  (set-face-attribute 'org-level-1 nil        :height 1.0 :weight 'bold)
-  (set-face-attribute 'org-level-2 nil        :height 1.0 :weight 'bold)
-  (set-face-attribute 'org-level-3 nil        :height 1.0 :weight 'bold)
-  (set-face-attribute 'org-level-4 nil        :height 1.0 :weight 'bold)
-  (set-face-attribute 'org-level-5 nil        :height 1.0 :weight 'bold)
-  (set-face-attribute 'org-level-6 nil        :height 1.0 :weight 'bold)
-  (set-face-attribute 'org-level-7 nil        :height 1.0 :weight 'bold)
-  (setq org-startup-folded nil
+  (set-face-attribute 'org-level-1        nil :height 1.0 :weight 'bold)
+  (set-face-attribute 'org-level-2        nil :height 1.0 :weight 'bold)
+  (set-face-attribute 'org-level-3        nil :height 1.0 :weight 'bold)
+  (set-face-attribute 'org-level-4        nil :height 1.0 :weight 'bold)
+  (set-face-attribute 'org-level-5        nil :height 1.0 :weight 'bold)
+  (set-face-attribute 'org-level-6        nil :height 1.0 :weight 'bold)
+  (set-face-attribute 'org-level-7        nil :height 1.0 :weight 'bold)
+  (setq org-startup-folded t
         org-startup-indented t
         org-adapt-indentation t
         org-pretty-entities t
@@ -133,19 +134,10 @@
         org-superstar-item-bullet-alist '((?+ . ?⦁)
                                           (?* . ?⦁)
                                           (?- . ?⦁))
-        org-ellipsis " ⇲ "))
+        org-ellipsis " ... "))
 
-(add-to-list 'default-frame-alist '(width  . 190))
-(add-to-list 'default-frame-alist '(height . 88))
-
-;;(defun gkh/org-mode-visual()
-;;  (setq visual-fill-column-width 200
-;;        visual-fill-column-center-text nil
-;;        display-fill-column-indicator nil
-;;        display-line-numbers t)
-;;  (visual-fill-column-mode 1))
-
-;;(add-hook! 'org-mode-hook #'gkh/org-mode-visual)
+(add-to-list 'default-frame-alist '(width  . 140))
+(add-to-list 'default-frame-alist '(height . 70))
 
 (setq centaur-tabs-style "bar"
       centaur-tabs-set-bar -1
