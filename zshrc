@@ -60,18 +60,19 @@ alias src='source ~/.zshrc'
 # #####################################################################################
 # Cambiando ls por exa. Instalar el paquete: $ sudo dnf install exa
 # #####################################################################################
-if [[ -x "$(command -v exa)" ]]; then
-   alias lc='exa -lU  --sort=created  --time-style=long-iso --color=always --group-directories-first'
-   alias lm='exa -lm  --sort=modified --time-style=long-iso --color=always --group-directories-first'
-   alias ls='exa -lm  --sort=size     --time-style=long-iso --color=always --group-directories-first'
-   alias la='exa -lma --sort=modified --time-style=long-iso --color=always --group-directories-first'
-   alias lt='exa -lmT --sort=name     --time-style=long-iso --color=always --group-directories-first'
-fi
+#if [[ -x "$(command -v exa)" ]]; then
+#   alias lc='exa -lU  --sort=created  --time-style=long-iso --color=always --group-directories-first'
+#   alias lm='exa -lm  --sort=modified --time-style=long-iso --color=always --group-directories-first'
+#   alias ls='exa -lm  --sort=size     --time-style=long-iso --color=always --group-directories-first'
+#   alias la='exa -lma --sort=modified --time-style=long-iso --color=always --group-directories-first'
+#   alias lt='exa -lmT --sort=name     --time-style=long-iso --color=always --group-directories-first'
+#fi
 
-#alias ls='ls -ltrh  --color=always --group-directories-first'
-#alias ll='ls -lSrh  --color=always --group-directories-first'
-#alias la='ls -ltrha --color=always --group-directories-first'
-#alias lt='tree --dirsfirst'
+alias lm='gls -ltrh  --color=always --time-style=long-iso --group-directories-first'
+alias lc='gls -ltrh  --color=always --time-style=long-iso --group-directories-first --time=creation'
+alias ls='gls -lSrh  --color=always --time-style=long-iso --group-directories-first'
+alias la='gls -ltrha --color=always --time-style=long-iso --group-directories-first'
+alias lt='tree --dirsfirst'
 
 # #####################################################################################
 # Alias para los comandos de git
