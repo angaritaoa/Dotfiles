@@ -33,7 +33,8 @@
       doom-big-font (font-spec :family "JetBrains Mono" :size 13)
       doom-symbol-font (font-spec :family "JetBrains Mono" :size 13))
 
-(setq-default line-spacing 0.3)
+;;(setq-default line-spacing 0.3)
+;;(setq-default line-height 0.3)
 ;;(setq doom-font (font-spec :family "JetBrains Mono" :size 13 :weight 'Regular)
 ;;      doom-big-font (font-spec :family "JetBrains Mono" :size 12 :weight 'Light)
 ;;      doom-symbol-font (font-spec :family "JetBrains Mono" :size 12 :weight 'Light))
