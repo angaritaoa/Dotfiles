@@ -175,22 +175,22 @@
 	ABkAAAAAAAAAAAAAAAAAAADY
 	</data>
 	<key>CursorType</key>
-	<integer>2</integer>
+	<integer>1</integer>
 	<key>DisableANSIColor</key>
 	<false/>
 	<key>Font</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
 	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGkCwwVFlUkbnVsbNQNDg8QERIT
-	FFZOU1NpemVYTlNmRmxhZ3NWTlNOYW1lViRjbGFzcyNAKAAAAAAAABAQgAKAA18QE0pl
-	dEJyYWluc01vbm8tTGlnaHTSFxgZGlokY2xhc3NuYW1lWCRjbGFzc2VzVk5TRm9udKIZ
-	G1hOU09iamVjdAgRGiQpMjdJTFFTWF5nbnd+hY6QkpSqr7rDys0AAAAAAAABAQAAAAAA
-	AAAcAAAAAAAAAAAAAAAAAAAA1g==
+	FFZOU1NpemVYTlNmRmxhZ3NWTlNOYW1lViRjbGFzcyNAKgAAAAAAABAQgAKAA18QFUpl
+	dEJyYWluc01vbm8tUmVndWxhctIXGBkaWiRjbGFzc25hbWVYJGNsYXNzZXNWTlNGb250
+	ohkbWE5TT2JqZWN0CBEaJCkyN0lMUVNYXmdud36FjpCSlKyxvMXMzwAAAAAAAAEBAAAA
+	AAAAABwAAAAAAAAAAAAAAAAAAADY
 	</data>
 	<key>FontAntialias</key>
 	<true/>
 	<key>FontHeightSpacing</key>
-	<integer>1</integer>
+	<real>1.2</real>
 	<key>FontWidthSpacing</key>
 	<integer>1</integer>
 	<key>ProfileCurrentVersion</key>
