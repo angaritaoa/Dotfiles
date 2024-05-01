@@ -9,7 +9,7 @@ brew:
 macos:
 	brew update
 	brew upgrade
-	brew install tree p7zip xz gzip exa vlc ripgrep grep exa zstd fd sqlite hub gpg2 coreutils \
+	brew install tree p7zip xz gzip exa ripgrep grep exa zstd fd sqlite hub gpg2 coreutils \
 		gnu-tar direnv libtool git-delta universal-ctags shellcheck aspell languagetool \
 		clang-format google-java-format pandoc
 
@@ -20,11 +20,11 @@ dotfiles:
 
 .PHONY: emacs
 emacs:
-	brew tap railwaycat/emacsmacport
-	brew install --cask emacs-mac
+	brew tap d12frosted/emacs-plus
+	brew install emacs-plus --with-native-comp
 	rm -rf ~/.emacs.d
 	ln -fns ${PWD}/doom.d ~/.doom.d
-	git clone https://github.com/doomemacs/doomemacs ~/.emacs.d
+	git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
 	~/.emacs.d/bin/doom install
 	~/.emacs.d/bin/doom sync
 	~/.emacs.d/bin/doom doctor

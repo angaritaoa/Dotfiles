@@ -136,7 +136,7 @@
                                           (?- . ?⦁))
         org-ellipsis " ... "))
 
-(add-to-list 'default-frame-alist '(width  . 140))
+(add-to-list 'default-frame-alist '(width  . 170))
 (add-to-list 'default-frame-alist '(height . 70))
 
 (setq centaur-tabs-style "bar"

@@ -33,6 +33,8 @@ WHITE=$(tput setaf 15)
 export PS1="⌦ "
 export EDITOR="emacsclient -t -a ''"              # $EDITOR use Emacs in terminal
 export VISUAL="emacsclient -c -a emacs"           # $VISUAL use Emacs in GUI mode
+export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 
 # #####################################################################################
 # Configuración de rutas de directorios para busqueda de binarios
