@@ -175,7 +175,7 @@
 	ABkAAAAAAAAAAAAAAAAAAADY
 	</data>
 	<key>CursorType</key>
-	<integer>1</integer>
+	<integer>0</integer>
 	<key>DisableANSIColor</key>
 	<false/>
 	<key>Font</key>
@@ -190,7 +190,7 @@
 	<key>FontAntialias</key>
 	<true/>
 	<key>FontHeightSpacing</key>
-	<real>1.2</real>
+	<integer>1</integer>
 	<key>FontWidthSpacing</key>
 	<integer>1</integer>
 	<key>ProfileCurrentVersion</key>

@@ -29,9 +29,9 @@
 ;; refresh your font settings. If Emacs still can't find your font, it likely
 ;; wasn't installed correctly. Font issues are rarely Doom issues!
 
-(setq doom-font (font-spec :family "JetBrains Mono" :size 13)
-      doom-big-font (font-spec :family "JetBrains Mono" :size 13)
-      doom-symbol-font (font-spec :family "JetBrains Mono" :size 13))
+(setq doom-font (font-spec :family "JetBrains Mono" :size 13 :weight 'light)
+      doom-big-font (font-spec :family "JetBrains Mono" :size 13 :weight 'light)
+      doom-symbol-font (font-spec :family "JetBrains Mono" :size 13 :weight 'light))
 
 ;;(setq-default line-spacing 0.3)
 ;;(setq-default line-height 0.3)

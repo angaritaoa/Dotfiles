@@ -88,3 +88,7 @@ alias gll='git log --pretty="format:%C(yellow)%h%Creset %C(red)%G?%Creset%C(gree
 alias gp='git push'
 alias gf='git fetch'
 alias gs='git status'
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
